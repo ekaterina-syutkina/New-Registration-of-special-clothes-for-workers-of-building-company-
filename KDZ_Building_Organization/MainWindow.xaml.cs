@@ -29,10 +29,19 @@ namespace KDZ_Building_Organization
         {
 
         }
-
+        
+        /*private void grid_Loaded(object sender, RoutedEventArgs e)
+        {
+            List<MyTable> result = new List<MyTable>(3);
+            result.Add(new MyTable("Каска", " ", " ", " "));
+            dataGrid.ItemsSource = result;
+        }*/
         private void Add_worker__Click(object sender, RoutedEventArgs e)
         {
+            Window1clothes Window1clothes  = new Window1clothes(Name.Text);
+            Window1clothes.ShowDialog();
             
+
             string prof = "";
             string cl_size = "";
             string sh_size = "";
@@ -88,6 +97,21 @@ namespace KDZ_Building_Organization
 
         }
 
+        /*class MyTable
+        {
+            public MyTable(string Clothes, string Size, string Since_Date, string For_Date)
+            {
+                this.Clothes = Clothes;
+                this.Size = Size;
+                this.Since_Date = Since_Date;
+                this.For_Date = For_Date;
+            }
+            public string Clothes { get; set; }
+            public string Size { get; set; }
+            public string Since_Date { get; set; }
+            public string For_Date { get; set; }
+        }*/
+        
         private void size_M_Checked(object sender, RoutedEventArgs e)
         {
 
