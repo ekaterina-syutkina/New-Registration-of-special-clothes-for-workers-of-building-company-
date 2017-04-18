@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Xml.Serialization;
+using System.IO;
 
 namespace KDZ_Building_Organization
 {
@@ -20,6 +22,7 @@ namespace KDZ_Building_Organization
     /// </summary>
     public partial class MainWindow : Window
     {
+        
         public MainWindow()
         {
             InitializeComponent();
@@ -88,10 +91,11 @@ namespace KDZ_Building_Organization
             { sh_size = size_44.Content.ToString(); }
             if (size_45.IsChecked == true)
             { sh_size = size_45.Content.ToString(); }
-
-            /*w = new Worker(Name.Text, prof, cl_size, sh_size);
-            result.Add(w);
-            Table.ItemsSource = result;*/
+            
+            Worker w = new Worker(Name.Text, prof, cl_size, sh_size);
+            list.Add(w);
+            //result.Add(w);
+            //Table.ItemsSource = result;*/
 
             listBox.Items.Add(Name.Text + " " + prof + " " + cl_size + " " + sh_size);
 
@@ -115,6 +119,36 @@ namespace KDZ_Building_Organization
         private void size_M_Checked(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+        List<Worker> list = new List<Worker>();
+
+        XmlSerializer ser =
+                           new XmlSerializer(typeof(List<Worker>));
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            TextWriter writer = new StreamWriter("test.txt");
+            ser.Serialize(writer, list);
+            writer.Close();
+
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            
+           TextReader reader = new StreamReader("test.txt");
+
+             list = (List<Worker>)ser.Deserialize(reader);
+
+            foreach (Worker c in list)
+            {
+
+                listBox.Items.Add(c.Name);
+            }
         }
     }
 }

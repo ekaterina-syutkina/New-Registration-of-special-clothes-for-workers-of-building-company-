@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace KDZ_Building_Organization
 {
-    class Worker
+    public class Worker
     {
         private string name;
 
@@ -44,7 +44,10 @@ namespace KDZ_Building_Organization
             this.shue_size = shue_size;
 
         }
+        public Worker()
+        {
 
+        }
         public string Result()
         {
             return String.Format(name, profession, clothes_size, shue_size);

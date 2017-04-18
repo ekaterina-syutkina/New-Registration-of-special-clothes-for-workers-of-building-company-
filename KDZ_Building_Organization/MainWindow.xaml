@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:KDZ_Building_Organization"
         mc:Ignorable="d"
         Title="MainWindow" Height="700" Width="1200
-        ">
-    <Grid Margin="0,0,2,-7">
+        " Closing="Window_Closing" Loaded="Window_Loaded">
+    <Grid Margin="0,0,2,-7" Loaded="Grid_Loaded">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="298*"/>
             <ColumnDefinition Width="341*"/>
