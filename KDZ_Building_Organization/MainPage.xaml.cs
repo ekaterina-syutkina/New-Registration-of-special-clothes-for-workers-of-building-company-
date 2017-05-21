@@ -18,33 +18,24 @@ using System.IO;
 namespace KDZ_Building_Organization
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для MainPage.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainPage : Page
     {
-        
-        public MainWindow()
+        public MainPage()
         {
             InitializeComponent();
         }
 
-        private void Name_TextChanged(object sender, TextChangedEventArgs e)
+        private void Name_TextChanged_1(object sender, TextChangedEventArgs e)
         {
 
         }
-        
-        /*private void grid_Loaded(object sender, RoutedEventArgs e)
-        {
-            List<MyTable> result = new List<MyTable>(3);
-            result.Add(new MyTable("Каска", " ", " ", " "));
-            dataGrid.ItemsSource = result;
-        }*/
+        List<Worker> list = new List<Worker>();
+        List<PersonsData> datalist = new List<PersonsData>();
+
         private void Add_worker__Click(object sender, RoutedEventArgs e)
         {
-            Window1clothes Window1clothes  = new Window1clothes(Name.Text);
-            Window1clothes.ShowDialog();
-            
-
             string prof = "";
             string cl_size = "";
             string sh_size = "";
@@ -92,63 +83,82 @@ namespace KDZ_Building_Organization
             if (size_45.IsChecked == true)
             { sh_size = size_45.Content.ToString(); }
             
-            Worker w = new Worker(Name.Text, prof, cl_size, sh_size);
-            list.Add(w);
+            if (Password1.Password != RepeatPassword.Password)
+            { MessageBox.Show("Введите пароль повторно ", "Пароли не совпадают", MessageBoxButton.OK); }
+            else
+            {
+                if (Name.Text != null && StartDay.Text != null && Login.Text != null && Password1.Password != null && prof != "" && cl_size != "" && sh_size != "")
+                {
+                    Worker w = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text);
+                    PersonsData p = new PersonsData(Login.Text, Password1.Password);
+                    list.Add(w);
+                    foreach (Worker c in list)
+                    { listBox.Items.Add(c.Result()); }
+                    datalist.Add(p);
+                    TextWriter writer = new StreamWriter("Worker.txt");
+                    ser.Serialize(writer, list);
+                    writer.Close();
+                    writer = new StreamWriter("PersonsData.txt");
+                    ser1.Serialize(writer, datalist);
+                    writer.Close();
+                }
+
+                
+                else
+                {
+                    MessageBox.Show("Заполните все поля ", "Ошибка", MessageBoxButton.OK);
+                }
+            }
             //result.Add(w);
             //Table.ItemsSource = result;*/
 
-            listBox.Items.Add(Name.Text + " " + prof + " " + cl_size + " " + sh_size);
+            //(Name.Text + " " + prof + " " + cl_size + " " + sh_size);
 
         }
-
-        /*class MyTable
+        private void Grid_Loaded(object sender, RoutedEventArgs e)
         {
-            public MyTable(string Clothes, string Size, string Since_Date, string For_Date)
-            {
-                this.Clothes = Clothes;
-                this.Size = Size;
-                this.Since_Date = Since_Date;
-                this.For_Date = For_Date;
-            }
-            public string Clothes { get; set; }
-            public string Size { get; set; }
-            public string Since_Date { get; set; }
-            public string For_Date { get; set; }
-        }*/
-        
+
+        }
         private void size_M_Checked(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void Grid_Loaded(object sender, RoutedEventArgs e)
-        {
-
-        }
-        List<Worker> list = new List<Worker>();
-
         XmlSerializer ser =
                            new XmlSerializer(typeof(List<Worker>));
-        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        XmlSerializer ser1 =
+                           new XmlSerializer(typeof(List<PersonsData>));
+       /* private void Page_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
-            TextWriter writer = new StreamWriter("test.txt");
+            TextWriter writer = new StreamWriter("Worker.txt");
             ser.Serialize(writer, list);
             writer.Close();
+            writer = new StreamWriter("PersonsData.txt");
+            ser.Serialize(writer, datalist);
+            writer.Close();
 
-        }
+        }*/
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+         private void FirstPage_Loaded(object sender, RoutedEventArgs e)
         {
-            
-           TextReader reader = new StreamReader("test.txt");
-
-             list = (List<Worker>)ser.Deserialize(reader);
-
+            TextReader reader = new StreamReader("Worker.txt");
+            list = (List<Worker>)ser.Deserialize(reader);
+            reader.Close();
+            reader = new StreamReader("PersonsData.txt");
+            datalist = (List<PersonsData>)ser1.Deserialize(reader);
+            reader.Close();
             foreach (Worker c in list)
             {
 
                 listBox.Items.Add(c.Name);
             }
+            
+        }
+
+        private void Enter_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new EnterPage());
+           
         }
     }
 }

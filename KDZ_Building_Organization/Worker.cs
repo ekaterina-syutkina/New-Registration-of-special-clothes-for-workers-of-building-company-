@@ -36,13 +36,20 @@ namespace KDZ_Building_Organization
             get { return shue_size; }
             set { shue_size = value; }
         }
-        public Worker(string name, string profession, string clothes_size, string shue_size)
+        private string login;
+
+        public string Login
+        {
+            get { return login; }
+            set { login = value; }
+        }
+        public Worker(string name, string profession, string clothes_size, string shue_size,string login)
         {
             this.name = name;
             this.profession = profession;
             this.clothes_size = clothes_size;
             this.shue_size = shue_size;
-
+            this.login = login;
         }
         public Worker()
         {
