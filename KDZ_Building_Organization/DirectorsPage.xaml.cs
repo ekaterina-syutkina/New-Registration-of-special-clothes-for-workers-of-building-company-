@@ -56,8 +56,8 @@ namespace KDZ_Building_Organization
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             int i = All_workers.SelectedIndex;
-            All_workers.Items.Remove(i);
-            /*list.RemoveAt(i);
+            All_workers.Items.RemoveAt(i);
+            list.RemoveAt(i);
             TextReader reader = new StreamReader("PersonsData.txt");
             datalist = (List<PersonsData>)ser1.Deserialize(reader);
             reader.Close();
@@ -73,9 +73,9 @@ namespace KDZ_Building_Organization
                 ser.Serialize(writer, list);
                 writer.Close();
                 writer = new StreamWriter("PersonsData.txt");
-                ser.Serialize(writer, newdatalist);
+                ser1.Serialize(writer, newdatalist);
                 writer.Close();
-            }*/
+            }
         }
     }
 }
