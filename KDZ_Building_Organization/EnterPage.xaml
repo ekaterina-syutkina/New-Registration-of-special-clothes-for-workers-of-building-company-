@@ -9,7 +9,7 @@
       Title="EnterPage">
 
     <Grid>
-        <Grid Margin="-266,0,-217,30">
+        <Grid Margin="-311,10,-172,20">
             <Label x:Name="Laable_Log_in" Content="Вход" HorizontalAlignment="Left" Height="42" Margin="537,33,0,0" VerticalAlignment="Top" Width="490" FontSize="26.667" FontFamily="Times New Roman"/>
             <Label x:Name="Input_Login" Content="Введите логин" HorizontalAlignment="Left" Height="48" Margin="384,116,0,0" VerticalAlignment="Top" Width="229"/>
             <Label x:Name="Input_Password" Content="Введите пароль" HorizontalAlignment="Left" Height="48" Margin="384,181,0,0" VerticalAlignment="Top" Width="229" Cursor=""/>

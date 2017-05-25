@@ -64,10 +64,17 @@
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ManagerPage.xaml.cs">
+      <DependentUpon>ManagerPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs" />
     <Compile Include="PersonsData.cs" />
     <Compile Include="Worker.cs" />
     <Compile Include="WorkersPage.xaml.cs">
       <DependentUpon>WorkersPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="WorkersPage1.xaml.cs">
+      <DependentUpon>WorkersPage1.xaml</DependentUpon>
     </Compile>
     <Page Include="DirectorsPage.xaml">
       <SubType>Designer</SubType>
@@ -85,7 +92,15 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ManagerPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="WorkersPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="WorkersPage1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

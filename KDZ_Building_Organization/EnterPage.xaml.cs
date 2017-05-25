@@ -32,6 +32,7 @@ namespace KDZ_Building_Organization
                            new XmlSerializer(typeof(List<Worker>));
         XmlSerializer ser1 =
                           new XmlSerializer(typeof(List<PersonsData>));
+        
         private void Enter_an_account_Click(object sender, RoutedEventArgs e)
         {
             TextReader reader = new StreamReader("Worker.txt");
@@ -40,6 +41,7 @@ namespace KDZ_Building_Organization
             reader = new StreamReader("PersonsData.txt");
             datalist = (List<PersonsData>)ser1.Deserialize(reader);
             reader.Close();
+            
             int i = 0;
             Worker newworker = null;
             foreach (Worker c in list)
@@ -59,7 +61,7 @@ namespace KDZ_Building_Organization
                 int t = 0;
                 PersonsData newpersonsdata = null;
                 foreach (PersonsData p in datalist)
-                    if (Log.Text!=p.Login)
+                    if (Log.Text != p.Login)
                     {
                         t++;
                     }
@@ -70,7 +72,20 @@ namespace KDZ_Building_Organization
                         if (newworker.Profession == "Директор")
                         { this.NavigationService.Navigate(new DirectorsPage(newworker.Name)); }
                         else
-                        { this.NavigationService.Navigate(new WorkersPage(newworker.Name, newworker.Profession, newworker.Clothes_size, newworker.Shue_size)); }
+                        {
+                            if (newworker.Profession == "Заведующий складом")
+                            {
+                                this.NavigationService.Navigate(new ManagerPage(newworker.Name));
+                            }
+                            else
+                            {
+                                if (newworker.Profession == "Маляр" || newworker.Profession == "Электрик")
+                                {
+                                    this.NavigationService.Navigate(new WorkersPage1(newworker.Name, newworker.Profession, newworker.Clothes_size, newworker.Shue_size, newworker.Time, newworker.Cas_time, newworker.Gloves_time, newworker.S_sh_time, newworker.S_j_time, newworker.S_pan_time));
+                                }
+                                else { this.NavigationService.Navigate(new WorkersPage(newworker.Name, newworker.Profession, newworker.Clothes_size, newworker.Shue_size,newworker.Time,newworker.Cas_time,newworker.Gloves_time,newworker.S_sh_time,newworker.W_sh_time,newworker.S_j_time,newworker.W_j_time,newworker.S_pan_time,newworker.W_pan_time)); }
+                            }
+                        }
                     }
                     else
                     {

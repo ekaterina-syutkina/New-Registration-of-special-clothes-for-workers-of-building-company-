@@ -6,58 +6,67 @@
       xmlns:local="clr-namespace:KDZ_Building_Organization"
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1200"
-      Title="MainPage">
+      Title="MainPage" MinWidth="1200" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto">
 
-    <Grid>
-        <Grid x:Name="FirstPage" Margin="63,10,-53,13" Loaded="FirstPage_Loaded" RenderTransformOrigin="0.5,0.5">
+    <Grid MinWidth="1200">
+        <Grid x:Name="FirstPage" Margin="38,18,0,6" Loaded="FirstPage_Loaded" RenderTransformOrigin="0.53,0.572" HorizontalAlignment="Left">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.13"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="298*"/>
-                <ColumnDefinition Width="341*"/>
+                <ColumnDefinition Width="461*"/>
+                <ColumnDefinition Width="153*"/>
             </Grid.ColumnDefinitions>
-            <Menu x:Name="Shue_size" HorizontalAlignment="Left" Height="427" Margin="384,243,0,0" VerticalAlignment="Top" Width="78" FontSize="8">
-                <RadioButton x:Name="size_37" Content="37" FontSize="26.667" Width="78" Height="42"/>
-                <RadioButton x:Name="size_38" Content="38" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="47" Width="68"/>
-                <RadioButton x:Name="size_39" Content="39" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="40" Width="68"/>
-                <RadioButton x:Name="size_40" Content="40" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="40" Width="68"/>
-                <RadioButton x:Name="size_41" Content="41" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="42" Width="68"/>
-                <RadioButton x:Name="size_42" Content="42" FontSize="26.667" Width="68" Height="42"/>
-                <RadioButton x:Name="size_43" Content="43" FontSize="26.667" Width="49" Height="48"/>
-                <RadioButton x:Name="size_44" Content="44" FontSize="26.667" Width="48" Height="41"/>
+            <Menu x:Name="Shue_size" HorizontalAlignment="Left" Height="270" Margin="182,206,0,0" VerticalAlignment="Top" Width="78" FontSize="8">
+                <RadioButton x:Name="size_37" Content="37" FontSize="18" Width="78" Height="22"/>
+                <RadioButton x:Name="size_38" Content="38" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="68"/>
+                <RadioButton x:Name="size_39" Content="39" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="68"/>
+                <RadioButton x:Name="size_40" Content="40" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="68"/>
+                <RadioButton x:Name="size_41" Content="41" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="68"/>
+                <RadioButton x:Name="size_42" Content="42" FontSize="18" Width="68" Height="22"/>
+                <RadioButton x:Name="size_43" Content="43" FontSize="18" Width="49" Height="22"/>
+                <RadioButton x:Name="size_44" Content="44" FontSize="18" Width="48" Height="22"/>
                 <RadioButton x:Name="size_45" Content="45" FontSize="26.667" Width="62" Height="42" d:IsHidden="True"/>
             </Menu>
-            <Menu x:Name="Clothes_size" HorizontalAlignment="Left" Height="268" Margin="128,243,0,0" VerticalAlignment="Top" Width="101">
-                <RadioButton x:Name="size_S" Content="S" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="47" Width="78" Checked="size_M_Checked"/>
-                <RadioButton x:Name="size_M" Content="M" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="47" Width="78"/>
-                <RadioButton x:Name="size_L" Content="L" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="47" Width="87"/>
-                <RadioButton x:Name="size_XL" Content="XL" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="47" Width="64"/>
-                <RadioButton x:Name="size_XXL" Content="XXL" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="65" Width="131"/>
+            <Menu x:Name="Clothes_size" HorizontalAlignment="Left" Height="146" Margin="20,203,0,0" VerticalAlignment="Top" Width="101">
+                <RadioButton x:Name="size_S" Content="S" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="78" Checked="size_M_Checked"/>
+                <RadioButton x:Name="size_M" Content="M" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="78"/>
+                <RadioButton x:Name="size_L" Content="L" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="87"/>
+                <RadioButton x:Name="size_XL" Content="XL" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="64"/>
+                <RadioButton x:Name="size_XXL" Content="XXL" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="131"/>
             </Menu>
-            <Menu x:Name="List_of_professions" HorizontalAlignment="Left" Height="421" Margin="534,243,0,0" VerticalAlignment="Top" Width="164" Grid.ColumnSpan="2">
-                <RadioButton x:Name="Director" Content="Директор" FontSize="26.667" Width="143" Height="60"/>
-                <RadioButton x:Name="worker" Content="Прораб" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="65" Width="131"/>
-                <RadioButton x:Name="stonemason" Content="Каменщик" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="65" Width="156"/>
-                <RadioButton x:Name="painter" Content="Маляр" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="65" Width="131"/>
-                <RadioButton x:Name="welder" Content="Сварщик" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="65" Width="131"/>
-                <RadioButton x:Name="electric" Content="Электрик" FontSize="26.667" RenderTransformOrigin="-0.836,2.3" Height="65" Width="131"/>
+            <Menu x:Name="List_of_professions" HorizontalAlignment="Left" Height="421" Margin="283,202,0,0" VerticalAlignment="Top" Width="215">
+                <RadioButton x:Name="Director" Content="Директор" Width="143" Height="24" FontSize="18"/>
+                <RadioButton x:Name="worker" Content="Прораб" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="26" Width="131"/>
+                <RadioButton x:Name="stonemason" Content="Каменщик" RenderTransformOrigin="-0.836,2.3" Height="26" Width="156" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18"/>
+                <RadioButton x:Name="painter" Content="Маляр" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="32" Width="131"/>
+                <RadioButton x:Name="welder" Content="Сварщик" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="24" Width="131"/>
+                <RadioButton x:Name="electric" Content="Электрик" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="29" Width="131"/>
+                <RadioButton x:Name="Manager" Content="Заведующий складом" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="29" Width="205"/>
             </Menu>
-            <Label x:Name="Put_clothes_size" Content="Размер одежды" HorizontalAlignment="Left" Height="38" Margin="111,186,0,0" VerticalAlignment="Top" Width="152" FontSize="16"/>
-            <Label x:Name="Put_shue_size" Content="Размер обуви " HorizontalAlignment="Left" Height="38" Margin="344,186,0,0" VerticalAlignment="Top" Width="144" FontSize="16"/>
-            <Label x:Name="Put_profession" Content="Профессия" HorizontalAlignment="Left" Height="38" Margin="0,186,0,0" VerticalAlignment="Top" Width="129" FontSize="16" Grid.Column="1"/>
-            <TextBox x:Name="Name" HorizontalAlignment="Left" Height="34" Margin="303,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextChanged="Name_TextChanged_1"/>
-            <Label x:Name="Put_name" Content="Введите ФИО" HorizontalAlignment="Left" Height="42" Margin="111,89,0,0" VerticalAlignment="Top" Width="118" FontSize="16"/>
-            <Button x:Name="Add_worker_" Content="Добавить работника" Grid.Column="1" HorizontalAlignment="Left" Height="76" Margin="191,272,0,0" VerticalAlignment="Top" Width="364" FontSize="18" Click="Add_worker__Click"/>
-            <ListBox x:Name="listBox" Grid.Column="1" HorizontalAlignment="Left" Height="130" Margin="191,429,0,0" VerticalAlignment="Top" Width="384"/>
-            <Label x:Name="label" Grid.ColumnSpan="2" Content="Регистрация " HorizontalAlignment="Left" Height="39" Margin="212,22,0,0" VerticalAlignment="Top" Width="510" FontSize="18.667"/>
-            <Label x:Name="Put_name_Copy" Content="Дата выхода на работу " HorizontalAlignment="Left" Height="42" Margin="111,139,0,0" VerticalAlignment="Top" Width="178" FontSize="16"/>
-            <DatePicker x:Name="StartDay" HorizontalAlignment="Left" Height="39" Margin="319,142,0,0" VerticalAlignment="Top" Width="226"/>
-            <Label x:Name="Put_name_Copy1" Content="Логин " HorizontalAlignment="Left" Height="42" Margin="191,89,0,0" VerticalAlignment="Top" Width="118" FontSize="16" Grid.Column="1"/>
-            <Label x:Name="Put_name_Copy2" Content="Пароль " HorizontalAlignment="Left" Height="42" Margin="191,142,0,0" VerticalAlignment="Top" Width="118" FontSize="16" Grid.Column="1"/>
-            <Label x:Name="Put_name_Copy3" Content="Подтвердить пароль " HorizontalAlignment="Left" Height="42" Margin="191,202,0,0" VerticalAlignment="Top" Width="162" FontSize="16" Grid.Column="1"/>
-            <PasswordBox x:Name="Password1" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="373,139,0,0" VerticalAlignment="Top" Width="202"/>
-            <PasswordBox x:Name="RepeatPassword" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="373,202,0,0" VerticalAlignment="Top" Width="202"/>
-            <TextBox x:Name="Login" HorizontalAlignment="Left" Height="34" Margin="344,95,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Grid.Column="1"/>
-            <Button x:Name="Enter" Content="Войти " Grid.Column="1" HorizontalAlignment="Left" Margin="344,22,0,0" VerticalAlignment="Top" Width="145" Height="53" Click="Enter_Click"/>
-            <Label x:Name="All_workers_lable" Content="Работники фирмы" Grid.Column="1" HorizontalAlignment="Left" Height="52" Margin="222,372,0,0" VerticalAlignment="Top" Width="300" FontSize="24"/>
+            <Label x:Name="Put_clothes_size" Content="Размер одежды" HorizontalAlignment="Left" Height="38" Margin="3,168,0,0" VerticalAlignment="Top" Width="152" FontSize="16"/>
+            <Label x:Name="Put_shue_size" Content="Размер обуви " HorizontalAlignment="Left" Height="38" Margin="158,168,0,0" VerticalAlignment="Top" Width="144" FontSize="16"/>
+            <Label x:Name="Put_profession" Content="Профессия" HorizontalAlignment="Left" Height="38" Margin="302,168,0,0" VerticalAlignment="Top" Width="128" FontSize="16"/>
+            <TextBox x:Name="Name" HorizontalAlignment="Left" Height="34" Margin="195,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextChanged="Name_TextChanged_1"/>
+            <Label x:Name="Put_name" Content="Введите ФИО" HorizontalAlignment="Left" Height="42" Margin="3,71,0,0" VerticalAlignment="Top" Width="118" FontSize="16"/>
+            <Button x:Name="Add_worker_" Content="Добавить работника" HorizontalAlignment="Left" Height="76" Margin="523,318,-273,0" VerticalAlignment="Top" Width="364" FontSize="18" Click="Add_worker__Click" Grid.ColumnSpan="2"/>
+            <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="130" Margin="503,481,-273,0" VerticalAlignment="Top" Width="384" Grid.ColumnSpan="2"/>
+            <Label x:Name="label" Content="Регистрация " HorizontalAlignment="Left" Height="39" Margin="104,4,0,0" VerticalAlignment="Top" Width="510" FontSize="18.667"/>
+            <Label x:Name="Put_name_Copy" Content="Дата выхода на работу " HorizontalAlignment="Left" Height="42" Margin="3,121,0,0" VerticalAlignment="Top" Width="178" FontSize="16"/>
+            <DatePicker x:Name="StartDay" HorizontalAlignment="Left" Height="39" Margin="211,124,0,0" VerticalAlignment="Top" Width="226"/>
+            <Label x:Name="Put_name_Copy1" Content="Логин " HorizontalAlignment="Left" Height="42" Margin="503,127,-7,0" VerticalAlignment="Top" Width="118" FontSize="16" Grid.ColumnSpan="2"/>
+            <Label x:Name="Put_name_Copy2" Content="Пароль " HorizontalAlignment="Left" Height="42" Margin="503,180,-7,0" VerticalAlignment="Top" Width="118" FontSize="16" Grid.ColumnSpan="2"/>
+            <Label x:Name="Put_name_Copy3" Content="Подтвердить пароль " HorizontalAlignment="Left" Height="42" Margin="503,240,-51,0" VerticalAlignment="Top" Width="162" FontSize="16" Grid.ColumnSpan="2"/>
+            <PasswordBox x:Name="Password1" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="71,177,-273,0" VerticalAlignment="Top" Width="202"/>
+            <PasswordBox x:Name="RepeatPassword" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="71,240,-273,0" VerticalAlignment="Top" Width="202"/>
+            <TextBox x:Name="Login" HorizontalAlignment="Left" Height="34" Margin="42,133,-293,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Grid.Column="1"/>
+            <Button x:Name="Enter" Content="Войти " Grid.Column="1" HorizontalAlignment="Left" Margin="42,60,-187,0" VerticalAlignment="Top" Width="145" Height="53" Click="Enter_Click"/>
+            <Label x:Name="All_workers_lable" Content="Работники фирмы" HorizontalAlignment="Left" Height="52" Margin="534,424,-220,0" VerticalAlignment="Top" Width="300" FontSize="24" Grid.ColumnSpan="2"/>
         </Grid>
 
     </Grid>

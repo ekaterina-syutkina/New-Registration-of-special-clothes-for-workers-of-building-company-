@@ -39,6 +39,14 @@ namespace KDZ_Building_Organization
             string prof = "";
             string cl_size = "";
             string sh_size = "";
+            string cas_time = null;
+            string gloves_time = null;
+            string s_sh_time = null;
+            string w_sh_time = null;
+            string s_j_time = null;
+            string w_j_time = null;
+            string s_pan_time = null;
+            string w_pan_time = null;
 
             if (size_S.IsChecked == true)
             { cl_size = "S"; }
@@ -63,6 +71,8 @@ namespace KDZ_Building_Organization
             { prof = welder.Content.ToString(); }
             if (electric.IsChecked == true)
             { prof = electric.Content.ToString(); }
+            if (Manager.IsChecked == true)
+            { prof = Manager.Content.ToString(); }
 
             if (size_37.IsChecked == true)
             { sh_size = size_37.Content.ToString(); }
@@ -82,28 +92,68 @@ namespace KDZ_Building_Organization
             { sh_size = size_44.Content.ToString(); }
             if (size_45.IsChecked == true)
             { sh_size = size_45.Content.ToString(); }
-            
+
             if (Password1.Password != RepeatPassword.Password)
             { MessageBox.Show("Введите пароль повторно ", "Пароли не совпадают", MessageBoxButton.OK); }
             else
             {
                 if (Name.Text != null && StartDay.Text != null && Login.Text != null && Password1.Password != null && prof != "" && cl_size != "" && sh_size != "")
                 {
-                    Worker w = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text);
-                    PersonsData p = new PersonsData(Login.Text, Password1.Password);
-                    list.Add(w);
-                    foreach (Worker c in list)
-                    { listBox.Items.Add(c.Result()); }
-                    datalist.Add(p);
-                    TextWriter writer = new StreamWriter("Worker.txt");
-                    ser.Serialize(writer, list);
-                    writer.Close();
-                    writer = new StreamWriter("PersonsData.txt");
-                    ser1.Serialize(writer, datalist);
-                    writer.Close();
+                    if (Director.IsChecked == true)
+                    {
+                        int k = 0;
+                        foreach (Worker w in list)
+                        {
+                            if (w.Profession != "Директор") { k++; }
+
+                        }
+                        if (k == list.Count)
+                        { Worker w1 = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text); list.Add(w1); }
+                        else { MessageBox.Show("Вакансия директора коипании занята", "Ошибка", MessageBoxButton.OK); }
+                    }
+                    else
+                    {
+                        if (Manager.IsChecked == true)
+                        {
+                            int k = 0;
+                            foreach (Worker w in list)
+                            {
+                                if (w.Profession != Manager.Content.ToString()) { k++; }
+
+                            }
+                            if (k == list.Count)
+                            { Worker w1 = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text); list.Add(w1); }
+                            else { MessageBox.Show("Вакансия заведующего складом занята", "Ошибка", MessageBoxButton.OK); }
+                        }
+                        else
+                        {
+                            if (painter.IsChecked == true || electric.IsChecked == true)
+                            {
+                                Worker w = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text, StartDay.Text, cas_time, gloves_time, s_sh_time, s_j_time, s_pan_time);
+                                list.Add(w);
+                            }
+                            else
+                            {
+                                Worker w = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text, StartDay.Text, cas_time, gloves_time, s_sh_time, w_sh_time, s_j_time, w_j_time, s_pan_time, w_pan_time);
+                                list.Add(w);
+                            }
+                        }
+                        PersonsData p = new PersonsData(Login.Text, Password1.Password);
+
+                        foreach (Worker c in list)
+                        { listBox.Items.Add(c.Result()); }
+                        datalist.Add(p);
+                        TextWriter writer = new StreamWriter("Worker.txt");
+                        ser.Serialize(writer, list);
+                        writer.Close();
+                        writer = new StreamWriter("PersonsData.txt");
+                        ser1.Serialize(writer, datalist);
+                        writer.Close();
+
+                    }
                 }
 
-                
+
                 else
                 {
                     MessageBox.Show("Заполните все поля ", "Ошибка", MessageBoxButton.OK);
@@ -128,18 +178,18 @@ namespace KDZ_Building_Organization
                            new XmlSerializer(typeof(List<Worker>));
         XmlSerializer ser1 =
                            new XmlSerializer(typeof(List<PersonsData>));
-       /* private void Page_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-        {
-            TextWriter writer = new StreamWriter("Worker.txt");
-            ser.Serialize(writer, list);
-            writer.Close();
-            writer = new StreamWriter("PersonsData.txt");
-            ser.Serialize(writer, datalist);
-            writer.Close();
+        /* private void Page_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+         {
+             TextWriter writer = new StreamWriter("Worker.txt");
+             ser.Serialize(writer, list);
+             writer.Close();
+             writer = new StreamWriter("PersonsData.txt");
+             ser.Serialize(writer, datalist);
+             writer.Close();
 
-        }*/
+         }*/
 
-         private void FirstPage_Loaded(object sender, RoutedEventArgs e)
+        private void FirstPage_Loaded(object sender, RoutedEventArgs e)
         {
             TextReader reader = new StreamReader("Worker.txt");
             list = (List<Worker>)ser.Deserialize(reader);
@@ -152,13 +202,13 @@ namespace KDZ_Building_Organization
 
                 listBox.Items.Add(c.Name);
             }
-            
+
         }
 
         private void Enter_Click(object sender, RoutedEventArgs e)
         {
             this.NavigationService.Navigate(new EnterPage());
-           
+
         }
     }
 }

@@ -77,5 +77,12 @@ namespace KDZ_Building_Organization
                 writer.Close();
             }
         }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            int i = All_workers.SelectedIndex;
+            Worker w = list[i];
+            this.NavigationService.Navigate(new WorkersPage1(w.Name, w.Profession, w.Clothes_size, w.Shue_size,w.Time,w.Cas_time,w.Gloves_time,w.S_sh_time,w.S_j_time,w.S_pan_time));
+        }
     }
 }
