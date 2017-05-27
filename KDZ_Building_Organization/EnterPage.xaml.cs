@@ -81,9 +81,10 @@ namespace KDZ_Building_Organization
                             {
                                 if (newworker.Profession == "Маляр" || newworker.Profession == "Электрик")
                                 {
-                                    this.NavigationService.Navigate(new WorkersPage1(newworker.Name, newworker.Profession, newworker.Clothes_size, newworker.Shue_size, newworker.Time, newworker.Cas_time, newworker.Gloves_time, newworker.S_sh_time, newworker.S_j_time, newworker.S_pan_time));
+                                    int n = 0;
+                                    this.NavigationService.Navigate(new WorkersPage1(n,newworker.Name, newworker.Profession, newworker.Clothes_size, newworker.Shue_size, newworker.Time, newworker.Cas_time, newworker.Gloves_time, newworker.S_sh_time, newworker.S_j_time, newworker.S_pan_time));
                                 }
-                                else { this.NavigationService.Navigate(new WorkersPage(newworker.Name, newworker.Profession, newworker.Clothes_size, newworker.Shue_size,newworker.Time,newworker.Cas_time,newworker.Gloves_time,newworker.S_sh_time,newworker.W_sh_time,newworker.S_j_time,newworker.W_j_time,newworker.S_pan_time,newworker.W_pan_time)); }
+                                else { int k = 0; this.NavigationService.Navigate(new WorkersPage(k,newworker.Name, newworker.Profession, newworker.Clothes_size, newworker.Shue_size,newworker.Time,newworker.Cas_time,newworker.Gloves_time,newworker.S_sh_time,newworker.W_sh_time,newworker.S_j_time,newworker.W_j_time,newworker.S_pan_time,newworker.W_pan_time)); }
                             }
                         }
                     }

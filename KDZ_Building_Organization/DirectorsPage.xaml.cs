@@ -82,7 +82,19 @@ namespace KDZ_Building_Organization
         {
             int i = All_workers.SelectedIndex;
             Worker w = list[i];
-            this.NavigationService.Navigate(new WorkersPage1(w.Name, w.Profession, w.Clothes_size, w.Shue_size,w.Time,w.Cas_time,w.Gloves_time,w.S_sh_time,w.S_j_time,w.S_pan_time));
+            if (w.Profession == "Директор") { MessageBox.Show("Вы зашли под именеи директора", "Вы директор", MessageBoxButton.OK); }
+            else
+            {
+                if (w.Profession == "Заведующий складом") { MessageBox.Show("Профиль заведующего складом не доступен для просмотра", "Ошибка", MessageBoxButton.OK); }
+                else
+                {
+                    if (w.Profession == "Электрик" || w.Profession == "Маляр")
+                    { int n = 1; this.NavigationService.Navigate(new WorkersPage1(n,w.Name, w.Profession, w.Clothes_size, w.Shue_size, w.Time, w.Cas_time, w.Gloves_time, w.S_sh_time, w.S_j_time, w.S_pan_time)); All_workers.Items.Clear(); }
+                    else
+                    { int k = 1; this.NavigationService.Navigate(new WorkersPage(k,w.Name, w.Profession, w.Clothes_size, w.Shue_size, w.Time, w.Cas_time, w.Gloves_time, w.S_sh_time, w.W_sh_time, w.S_j_time, w.W_j_time, w.S_pan_time, w.W_pan_time)); All_workers.Items.Clear(); }
+                }
+            }
+            
         }
     }
 }

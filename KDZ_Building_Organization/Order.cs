@@ -42,7 +42,7 @@ namespace KDZ_Building_Organization
         }
         public string Result()
         {
-           return String.Format(Data+" "+MyOrder);
+           return String.Format(Name+" "+Data+" "+MyOrder);
         }
 
     }

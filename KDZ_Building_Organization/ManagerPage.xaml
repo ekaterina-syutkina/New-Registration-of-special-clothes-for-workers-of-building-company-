@@ -8,16 +8,17 @@
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="ManagerPage">
 
-    <Grid x:Name="Manager_Grid" Loaded="Manager_Grid_Loaded">
+    <Grid x:Name="Manager_Grid" Loaded="Manager_Grid_Loaded_1">
         <Label x:Name="Manager_label" Content="Заведующий складом " HorizontalAlignment="Left" Height="57" Margin="126,74,0,0" VerticalAlignment="Top" Width="385" FontSize="29.333"/>
         <TextBox x:Name="Name" HorizontalAlignment="Left" Height="57" Margin="600,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="417"/>
         <Label x:Name="All_workers_lable" Content="Работники фирмы " HorizontalAlignment="Left" Height="46" Margin="63,153,0,0" VerticalAlignment="Top" Width="349" FontSize="21.333"/>
         <Label x:Name="Requests_lable" Content="Запросы работников " HorizontalAlignment="Left" Height="46" Margin="498,153,0,0" VerticalAlignment="Top" Width="340" FontSize="21.333"/>
-        <ListBox x:Name="All_workers" HorizontalAlignment="Left" Height="314" Margin="34,238,0,0" VerticalAlignment="Top" Width="276"/>
-        <ListBox x:Name="Requests" HorizontalAlignment="Left" Height="314" Margin="480,265,0,0" VerticalAlignment="Top" Width="377"/>
-        <DatePicker HorizontalAlignment="Left" Height="35" Margin="876,265,0,0" VerticalAlignment="Top" Width="290"/>
-        <Button x:Name="Done" Content="Выдано" HorizontalAlignment="Left" Height="37" Margin="900,314,0,0" VerticalAlignment="Top" Width="242"/>
+        <ListBox x:Name="All_workers" HorizontalAlignment="Left" Height="213" Margin="37,265,0,0" VerticalAlignment="Top" Width="276"/>
+        <ListBox x:Name="Requests" HorizontalAlignment="Left" Height="186" Margin="480,265,0,0" VerticalAlignment="Top" Width="377"/>
+        <DatePicker x:Name="DataPicker" HorizontalAlignment="Left" Height="35" Margin="876,265,0,0" VerticalAlignment="Top" Width="290"/>
+        <Button x:Name="Done" Content="Выдано" HorizontalAlignment="Left" Height="37" Margin="900,314,0,0" VerticalAlignment="Top" Width="242" Click="Done_Click"/>
         <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="49" Margin="480,199,0,0" VerticalAlignment="Top" Width="642"/>
+        <Button x:Name="button" Content="Посмотреть профиль работника " HorizontalAlignment="Left" Height="39" Margin="37,514,0,0" VerticalAlignment="Top" Width="276" Click="button_Click"/>
 
     </Grid>
 </Page>

@@ -39,12 +39,12 @@
         <ComboBox x:Name="Choose_clothes" HorizontalAlignment="Left" Height="40" Margin="51,459,0,0" VerticalAlignment="Top" Width="310">
             <ComboBoxItem Name="Helmet" Content="Каска"  Selected="ComboBoxItem_Selected_1"/>
             <ComboBoxItem Name="W_Shues" Content="Рабочая обувь(зимняя)" Selected="ComboBoxItem_Selected_2"/>
-            <ComboBoxItem Name="S_Shues" Content="Рабочая обувь (летняя)" Selected="ComboBoxItem_Selected_3"/>
+            <ComboBoxItem Name="S_Shues" Content="Рабочая обувь(летняя)" Selected="ComboBoxItem_Selected_3"/>
             <ComboBoxItem Name="Gloves" Content="Перчатки" Selected="ComboBoxItem_Selected_4"/>
             <ComboBoxItem Name="S_J" Content="Рабочая куртка(летняя)" Selected="ComboBoxItem_Selected_5"/>
             <ComboBoxItem Name="W_J" Content="Рабочая куртка(зимняя)" Selected="ComboBoxItem_Selected_6"/>
-            <ComboBoxItem Name="W_P" Content="Рабочие штаны (зимние)" Selected="ComboBoxItem_Selected_7"/>
-            <ComboBoxItem Name="S_P" Content="Рабочие штаны (летние)" Selected="ComboBoxItem_Selected_8"/>
+            <ComboBoxItem Name="W_P" Content="Рабочие штаны(зимние)" Selected="ComboBoxItem_Selected_7"/>
+            <ComboBoxItem Name="S_P" Content="Рабочие штаны(летние)" Selected="ComboBoxItem_Selected_8"/>
         </ComboBox>
         <Label x:Name="Order_clothes" Content="Заказать одежду " HorizontalAlignment="Left" Margin="51,308,0,328" Width="263" FontSize="21.333"/>
         <Label x:Name="lnstruction_label" Content="Чтобы оформить заказ выберите из списка спецодежду, которую хотите заказать. укажите дату заявкии и нажмите кнопку &quot;заказать одежду &quot;" HorizontalAlignment="Left" Height="41" Margin="51,389,0,0" VerticalAlignment="Top" Width="808"/>

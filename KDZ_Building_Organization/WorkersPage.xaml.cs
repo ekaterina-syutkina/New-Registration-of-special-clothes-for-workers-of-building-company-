@@ -22,7 +22,9 @@ namespace KDZ_Building_Organization
     /// Логика взаимодействия для WorkersPage.xaml
     /// </summary>
     public partial class WorkersPage : Page
-    {   string Id;
+    {
+        int i = 0;//если i=0,на страницу переходит авторизованный пользователь, если i=1, страница открывается только для просмотра 
+        string Id;
         string Prof;
         string cl_size;
         string sh_size;
@@ -35,9 +37,10 @@ namespace KDZ_Building_Organization
         string w_j_time = null;
         string s_pan_time = null;
         string w_pan_time = null;
-        public WorkersPage(string Id, string Prof, string cl_size, string sh_size, string time, string cas_time, string gloves_time, string s_sh_time,string w_sh_time, string s_j_time,string w_j_time, string s_pan_time,string w_pan_time)
+        public WorkersPage(int i,string Id, string Prof, string cl_size, string sh_size, string time, string cas_time, string gloves_time, string s_sh_time,string w_sh_time, string s_j_time,string w_j_time, string s_pan_time,string w_pan_time)
         {
             InitializeComponent();
+            this.i = i;
             this.Id = Id;
             this.Prof = Prof;
             this.cl_size = cl_size;
@@ -63,6 +66,7 @@ namespace KDZ_Building_Organization
             Profession.Text=Prof;
             Clothes_Size.Text=cl_size;
             Shue_Size.Text=sh_size;
+            if (i == 1) { Get_clothes.IsEnabled = false; }
         }
         
         private void Workers_Id_TextChanged(object sender, TextChangedEventArgs e)
@@ -130,8 +134,8 @@ namespace KDZ_Building_Organization
                 list = (List<Order>)ser.Deserialize(reader);
                 reader.Close(); } catch { }
             foreach (Order o in list )
-            {
-                My_orders.Items.Add(o.Result());
+            {   if (o.Name == Workers_Id.Text)
+                { My_orders.Items.Add(o.Result()); }
             }
         }
 
