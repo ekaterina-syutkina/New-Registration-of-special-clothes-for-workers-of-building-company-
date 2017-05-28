@@ -33,7 +33,7 @@ namespace KDZ_Building_Organization
         {
             try
             {
-                TextReader reader = new StreamReader("History.txt");
+                TextReader reader = new StreamReader("../../History.txt");
                 historylist = (List<History>)ser.Deserialize(reader);
                 reader.Close();
             }

@@ -41,7 +41,7 @@ namespace KDZ_Building_Organization
 
         private void Directors_Page_Loaded(object sender, RoutedEventArgs e)
         {
-            TextReader reader = new StreamReader("Worker.txt");
+            TextReader reader = new StreamReader("../../Worker.txt");
 
             list = (List<Worker>)ser.Deserialize(reader);
 
@@ -63,12 +63,12 @@ namespace KDZ_Building_Organization
             int i = All_workers.SelectedIndex;
             All_workers.Items.RemoveAt(i);
             list.RemoveAt(i);
-            TextReader reader = new StreamReader("PersonsData.txt");
+            TextReader reader = new StreamReader("../../PersonsData.txt");
             datalist = (List<PersonsData>)ser1.Deserialize(reader);
             reader.Close();
             List<PersonsData> newdatalist = new List<PersonsData>();
 
-            reader = new StreamReader("Order.txt");
+            reader = new StreamReader("../../Order.txt");
             list2 = (List<Order>)ser2.Deserialize(reader);
             reader.Close();
             List<Order> neworder = new List<Order>();
@@ -89,13 +89,13 @@ namespace KDZ_Building_Organization
                 }
 
             }
-            TextWriter writer = new StreamWriter("Worker.txt");
+            TextWriter writer = new StreamWriter("../../Worker.txt");
             ser.Serialize(writer, list);
             writer.Close();
-            writer = new StreamWriter("PersonsData.txt");
+            writer = new StreamWriter("../../PersonsData.txt");
             ser1.Serialize(writer, newdatalist);
             writer.Close();
-            writer = new StreamWriter("Order.txt");
+            writer = new StreamWriter("../../Order.txt");
             ser2.Serialize(writer, neworder);
             writer.Close();
         }

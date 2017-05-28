@@ -122,7 +122,7 @@ namespace KDZ_Building_Organization
             Order ord = new Order(Workers_Id.Text, Choose_date.Text,order);
             My_orders.Items.Add(ord.Result());
             list.Add(ord);
-            TextWriter writer = new StreamWriter("Order.txt");
+            TextWriter writer = new StreamWriter("../../Order.txt");
             ser.Serialize(writer, list);
             writer.Close();
         }
@@ -130,7 +130,7 @@ namespace KDZ_Building_Organization
 
         private void Grid_0_Loaded(object sender, RoutedEventArgs e)
         {   
-            try { TextReader reader = new StreamReader("Order.txt");
+            try { TextReader reader = new StreamReader("../../Order.txt");
                 list = (List<Order>)ser.Deserialize(reader);
                 reader.Close(); } catch { }
             foreach (Order o in list )

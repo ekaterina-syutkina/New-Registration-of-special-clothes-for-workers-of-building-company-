@@ -41,7 +41,7 @@ namespace KDZ_Building_Organization
         List<History> historylist = new List<History>();
         private void Manager_Grid_Loaded_1(object sender, RoutedEventArgs e)
         {
-            TextReader reader = new StreamReader("Worker.txt");
+            TextReader reader = new StreamReader("../../Worker.txt");
             list = (List<Worker>)ser.Deserialize(reader);
             reader.Close();
             foreach (Worker c in list)
@@ -51,7 +51,7 @@ namespace KDZ_Building_Organization
             }
             try
             {
-                reader = new StreamReader("Order.txt");
+                reader = new StreamReader("../../Order.txt");
                 list1 = (List<Order>)ser1.Deserialize(reader);
                 reader.Close();
             }
@@ -62,7 +62,7 @@ namespace KDZ_Building_Organization
             }
             try
             {
-                reader = new StreamReader("History.txt");
+                reader = new StreamReader("../../History.txt");
                 historylist = (List<History>)ser2.Deserialize(reader);
                 reader.Close();
             }
@@ -103,13 +103,13 @@ namespace KDZ_Building_Organization
                 Requests.Items.RemoveAt(i);
                 list1.RemoveAt(i);
 
-                TextWriter writer = new StreamWriter("Order.txt");
+                TextWriter writer = new StreamWriter("../../Order.txt");
                 ser1.Serialize(writer, list1);
                 writer.Close();
-                writer = new StreamWriter("Worker.txt");
+                writer = new StreamWriter("../../Worker.txt");
                 ser.Serialize(writer, list2);
                 writer.Close();
-                writer = new StreamWriter("History.txt");
+                writer = new StreamWriter("../../History.txt");
                 ser2.Serialize(writer, historylist);
                 writer.Close();
             }

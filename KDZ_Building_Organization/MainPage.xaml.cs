@@ -145,10 +145,10 @@ namespace KDZ_Building_Organization
                         //foreach (Worker c in list)
                         //{ listBox.Items.Add(c.Result()); }
                         datalist.Add(p);
-                        TextWriter writer = new StreamWriter("Worker.txt");
+                        TextWriter writer = new StreamWriter("../../Worker.txt");
                         ser.Serialize(writer, list);
                         writer.Close();
-                        writer = new StreamWriter("PersonsData.txt");
+                        writer = new StreamWriter("../../PersonsData.txt");
                         ser1.Serialize(writer, datalist);
                         writer.Close();
 
@@ -180,23 +180,13 @@ namespace KDZ_Building_Organization
                            new XmlSerializer(typeof(List<Worker>));
         XmlSerializer ser1 =
                            new XmlSerializer(typeof(List<PersonsData>));
-        /* private void Page_Closing(object sender, System.ComponentModel.CancelEventArgs e)
-         {
-             TextWriter writer = new StreamWriter("Worker.txt");
-             ser.Serialize(writer, list);
-             writer.Close();
-             writer = new StreamWriter("PersonsData.txt");
-             ser.Serialize(writer, datalist);
-             writer.Close();
-
-         }*/
-
+       
         private void FirstPage_Loaded(object sender, RoutedEventArgs e)
         {
-            TextReader reader = new StreamReader("Worker.txt");
+            TextReader reader = new StreamReader("../../Worker.txt");
             list = (List<Worker>)ser.Deserialize(reader);
             reader.Close();
-            reader = new StreamReader("PersonsData.txt");
+            reader = new StreamReader("../../PersonsData.txt");
             datalist = (List<PersonsData>)ser1.Deserialize(reader);
             reader.Close();
             foreach (Worker c in list)

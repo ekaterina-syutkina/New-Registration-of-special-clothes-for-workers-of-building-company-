@@ -35,10 +35,10 @@ namespace KDZ_Building_Organization
         
         private void Enter_an_account_Click(object sender, RoutedEventArgs e)
         {
-            TextReader reader = new StreamReader("Worker.txt");
+            TextReader reader = new StreamReader("../../Worker.txt");
             list = (List<Worker>)ser.Deserialize(reader);
             reader.Close();
-            reader = new StreamReader("PersonsData.txt");
+            reader = new StreamReader("../../PersonsData.txt");
             datalist = (List<PersonsData>)ser1.Deserialize(reader);
             reader.Close();
             
