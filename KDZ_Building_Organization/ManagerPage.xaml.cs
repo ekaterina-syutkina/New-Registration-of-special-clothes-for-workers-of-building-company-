@@ -36,6 +36,9 @@ namespace KDZ_Building_Organization
         XmlSerializer ser1 =
                            new XmlSerializer(typeof(List<Order>));
         List<Order> list1 = new List<Order>();
+        XmlSerializer ser2 =
+                           new XmlSerializer(typeof(List<History>));
+        List<History> historylist = new List<History>();
         private void Manager_Grid_Loaded_1(object sender, RoutedEventArgs e)
         {
             TextReader reader = new StreamReader("Worker.txt");
@@ -57,6 +60,13 @@ namespace KDZ_Building_Organization
             {
                 Requests.Items.Add(o.Result());
             }
+            try
+            {
+                reader = new StreamReader("History.txt");
+                historylist = (List<History>)ser2.Deserialize(reader);
+                reader.Close();
+            }
+            catch { }
         }
         List<Worker> list2 = new List<Worker>();
         private void Done_Click(object sender, RoutedEventArgs e)
@@ -67,6 +77,8 @@ namespace KDZ_Building_Organization
                 string newdata = DataPicker.Text;
                 int i = Requests.SelectedIndex;
                 Order o = list1[i];
+                History hist = new History(o.Name, o.Data, o.MyOrder, newdata);
+                historylist.Add(hist);
                 Worker wor = null;
                 foreach (Worker w in list)
                 {
@@ -76,6 +88,7 @@ namespace KDZ_Building_Organization
                     else
                     {
                         wor = w;
+                        
                         if (o.MyOrder == "Каска") { wor.Cas_time = newdata; list2.Add(wor); }
                         if (o.MyOrder=="Рабочая обувь(зимняя)") { wor.W_sh_time = newdata; list2.Add(wor); }
                         if (o.MyOrder == "Рабочая обувь(летняя)") { wor.S_sh_time = newdata; list2.Add(wor); }
@@ -95,6 +108,9 @@ namespace KDZ_Building_Organization
                 writer.Close();
                 writer = new StreamWriter("Worker.txt");
                 ser.Serialize(writer, list2);
+                writer.Close();
+                writer = new StreamWriter("History.txt");
+                ser2.Serialize(writer, historylist);
                 writer.Close();
             }
 
@@ -116,6 +132,13 @@ namespace KDZ_Building_Organization
                     { int k = 1; this.NavigationService.Navigate(new WorkersPage(k,w.Name, w.Profession, w.Clothes_size, w.Shue_size, w.Time, w.Cas_time, w.Gloves_time, w.S_sh_time, w.W_sh_time, w.S_j_time, w.W_j_time, w.S_pan_time, w.W_pan_time)); All_workers.Items.Clear();Requests.Items.Clear(); }
                 }
             }
+        }
+
+        private void History_button_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new HistoryPage());
+            Requests.Items.Clear();
+            All_workers.Items.Clear();
         }
     }
 }

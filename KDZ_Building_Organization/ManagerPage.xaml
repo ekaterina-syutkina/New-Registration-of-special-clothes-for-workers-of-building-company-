@@ -19,6 +19,7 @@
         <Button x:Name="Done" Content="Выдано" HorizontalAlignment="Left" Height="37" Margin="900,314,0,0" VerticalAlignment="Top" Width="242" Click="Done_Click"/>
         <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="49" Margin="480,199,0,0" VerticalAlignment="Top" Width="642"/>
         <Button x:Name="button" Content="Посмотреть профиль работника " HorizontalAlignment="Left" Height="39" Margin="37,514,0,0" VerticalAlignment="Top" Width="276" Click="button_Click"/>
+        <Button x:Name="History_button" Content="Посмотреть историю выдачи заказов " HorizontalAlignment="Left" Height="39" Margin="474,514,0,0" VerticalAlignment="Top" Width="342" Click="History_button_Click"/>
 
     </Grid>
 </Page>

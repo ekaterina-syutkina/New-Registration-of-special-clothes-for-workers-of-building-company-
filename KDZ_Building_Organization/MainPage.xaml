@@ -31,7 +31,7 @@
                 <RadioButton x:Name="size_42" Content="42" FontSize="18" Width="68" Height="22"/>
                 <RadioButton x:Name="size_43" Content="43" FontSize="18" Width="49" Height="22"/>
                 <RadioButton x:Name="size_44" Content="44" FontSize="18" Width="48" Height="22"/>
-                <RadioButton x:Name="size_45" Content="45" FontSize="26.667" Width="62" Height="42" d:IsHidden="True"/>
+                <RadioButton x:Name="size_45" Content="45" FontSize="18" Width="62" Height="42" d:IsHidden="True"/>
             </Menu>
             <Menu x:Name="Clothes_size" HorizontalAlignment="Left" Height="146" Margin="20,203,0,0" VerticalAlignment="Top" Width="101">
                 <RadioButton x:Name="size_S" Content="S" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="78" Checked="size_M_Checked"/>

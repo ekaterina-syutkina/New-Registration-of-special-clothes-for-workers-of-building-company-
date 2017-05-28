@@ -108,7 +108,7 @@ namespace KDZ_Building_Organization
 
                         }
                         if (k == list.Count)
-                        { Worker w1 = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text); list.Add(w1); }
+                        { Worker w1 = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text); list.Add(w1);listBox.Items.Add(w1.Name); }
                         else { MessageBox.Show("Вакансия директора коипании занята", "Ошибка", MessageBoxButton.OK); }
                     }
                     else
@@ -122,7 +122,7 @@ namespace KDZ_Building_Organization
 
                             }
                             if (k == list.Count)
-                            { Worker w1 = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text); list.Add(w1); }
+                            { Worker w1 = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text); list.Add(w1); listBox.Items.Add(w1.Name); }
                             else { MessageBox.Show("Вакансия заведующего складом занята", "Ошибка", MessageBoxButton.OK); }
                         }
                         else
@@ -131,17 +131,19 @@ namespace KDZ_Building_Organization
                             {
                                 Worker w = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text, StartDay.Text, cas_time, gloves_time, s_sh_time, s_j_time, s_pan_time);
                                 list.Add(w);
+                                listBox.Items.Add(w.Name);
                             }
                             else
                             {
                                 Worker w = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text, StartDay.Text, cas_time, gloves_time, s_sh_time, w_sh_time, s_j_time, w_j_time, s_pan_time, w_pan_time);
                                 list.Add(w);
+                                listBox.Items.Add(w.Name);
                             }
                         }
                         PersonsData p = new PersonsData(Login.Text, Password1.Password);
-
-                        foreach (Worker c in list)
-                        { listBox.Items.Add(c.Result()); }
+                        
+                        //foreach (Worker c in list)
+                        //{ listBox.Items.Add(c.Result()); }
                         datalist.Add(p);
                         TextWriter writer = new StreamWriter("Worker.txt");
                         ser.Serialize(writer, list);

@@ -35,6 +35,7 @@ namespace KDZ_Building_Organization
 
         }
         List<Worker> list = new List<Worker>();
+
         XmlSerializer ser =
                            new XmlSerializer(typeof(List<Worker>));
 
@@ -53,6 +54,10 @@ namespace KDZ_Building_Organization
         XmlSerializer ser1 =
                            new XmlSerializer(typeof(List<PersonsData>));
         List<PersonsData> datalist = new List<PersonsData>();
+
+        XmlSerializer ser2 =
+                           new XmlSerializer(typeof(List<Order>));
+        List<Order> list2 = new List<Order>();
         private void Delete_Click(object sender, RoutedEventArgs e)
         {
             int i = All_workers.SelectedIndex;
@@ -62,6 +67,19 @@ namespace KDZ_Building_Organization
             datalist = (List<PersonsData>)ser1.Deserialize(reader);
             reader.Close();
             List<PersonsData> newdatalist = new List<PersonsData>();
+
+            reader = new StreamReader("Order.txt");
+            list2 = (List<Order>)ser2.Deserialize(reader);
+            reader.Close();
+            List<Order> neworder = new List<Order>();
+            foreach (Order o in list2)
+            {
+                foreach (Worker w in list)
+                {
+                    if (o.Name == w.Name)
+                    { neworder.Add(o); }
+                }
+            }
             foreach (PersonsData p in datalist)
             {
                 foreach (Worker w in list)
@@ -69,13 +87,17 @@ namespace KDZ_Building_Organization
                     if (p.Login == w.Login)
                     { newdatalist.Add(p); }
                 }
-                TextWriter writer = new StreamWriter("Worker.txt");
-                ser.Serialize(writer, list);
-                writer.Close();
-                writer = new StreamWriter("PersonsData.txt");
-                ser1.Serialize(writer, newdatalist);
-                writer.Close();
+
             }
+            TextWriter writer = new StreamWriter("Worker.txt");
+            ser.Serialize(writer, list);
+            writer.Close();
+            writer = new StreamWriter("PersonsData.txt");
+            ser1.Serialize(writer, newdatalist);
+            writer.Close();
+            writer = new StreamWriter("Order.txt");
+            ser2.Serialize(writer, neworder);
+            writer.Close();
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -89,12 +111,12 @@ namespace KDZ_Building_Organization
                 else
                 {
                     if (w.Profession == "Электрик" || w.Profession == "Маляр")
-                    { int n = 1; this.NavigationService.Navigate(new WorkersPage1(n,w.Name, w.Profession, w.Clothes_size, w.Shue_size, w.Time, w.Cas_time, w.Gloves_time, w.S_sh_time, w.S_j_time, w.S_pan_time)); All_workers.Items.Clear(); }
+                    { int n = 1; this.NavigationService.Navigate(new WorkersPage1(n, w.Name, w.Profession, w.Clothes_size, w.Shue_size, w.Time, w.Cas_time, w.Gloves_time, w.S_sh_time, w.S_j_time, w.S_pan_time)); All_workers.Items.Clear(); }
                     else
-                    { int k = 1; this.NavigationService.Navigate(new WorkersPage(k,w.Name, w.Profession, w.Clothes_size, w.Shue_size, w.Time, w.Cas_time, w.Gloves_time, w.S_sh_time, w.W_sh_time, w.S_j_time, w.W_j_time, w.S_pan_time, w.W_pan_time)); All_workers.Items.Clear(); }
+                    { int k = 1; this.NavigationService.Navigate(new WorkersPage(k, w.Name, w.Profession, w.Clothes_size, w.Shue_size, w.Time, w.Cas_time, w.Gloves_time, w.S_sh_time, w.W_sh_time, w.S_j_time, w.W_j_time, w.S_pan_time, w.W_pan_time)); All_workers.Items.Clear(); }
                 }
             }
-            
+
         }
     }
 }
