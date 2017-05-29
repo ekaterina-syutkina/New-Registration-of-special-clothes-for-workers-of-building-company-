@@ -1,0 +1,31 @@
+﻿<Page x:Class="KDZ_Building_Organization.DirectorsPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:KDZ_Building_Organization"
+      mc:Ignorable="d" 
+      d:DesignHeight="700" d:DesignWidth="1200"
+      Title="DirectorsPage">
+
+    <Grid x:Name="Directors_Page" Loaded="Directors_Page_Loaded">
+        <Label x:Name="Directors_page_label" Content="Директор компании" HorizontalAlignment="Left" Height="61" Margin="68,22,0,0" VerticalAlignment="Top" Width="505" FontSize="29.333"/>
+        <TextBox x:Name="Directors_name" HorizontalAlignment="Left" Height="49" Margin="37,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" FontSize="21.333" TextChanged="Directors_name_TextChanged"/>
+        <ListBox x:Name="All_workers" HorizontalAlignment="Left" Height="257" Margin="675,109,0,0" VerticalAlignment="Top" Width="413"/>
+        <Label x:Name="label" Content="Работники фирмы " HorizontalAlignment="Left" Height="61" Margin="772,31,0,0" VerticalAlignment="Top" Width="225" FontSize="21.333"/>
+        <Label x:Name="Instruction_lable" Content="Чтобы удалить работника кликните на него правой кнопкой мыши  и нажмите ''Удалить" HorizontalAlignment="Left" Height="34" Margin="38,288,0,0" VerticalAlignment="Top" Width="510" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="-0.086"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Button x:Name="Delete" Content="Удалить работника" HorizontalAlignment="Left" Height="74" Margin="68,366,0,0" VerticalAlignment="Top" Width="383" FontSize="18.667" Click="Delete_Click"/>
+        <Button x:Name="button" Content="Открыть профиль работника" HorizontalAlignment="Left" Height="58" Margin="758,449,0,0" VerticalAlignment="Top" Width="260" Click="button_Click"/>
+        <Label x:Name="Instruction2" Content="Чтобы открыть профиль работника выберите его из списка и нажмите кнопку &quot;Открыть профиль работника&quot;" HorizontalAlignment="Left" Height="35" Margin="550,392,0,0" VerticalAlignment="Top" Width="618"/>
+
+    </Grid>
+</Page>

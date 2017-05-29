@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfPersonsData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <PersonsData>
+    <Login>nastya.syutkina@gmail.com</Login>
+    <Password>cjkysirj</Password>
+  </PersonsData>
+  <PersonsData>
+    <Login>katya.syutkina@gmail.com</Login>
+    <Password>cjkysirj</Password>
+  </PersonsData>
+  <PersonsData>
+    <Login>ilya.syutkin@gmail.com</Login>
+    <Password>cjkysirj</Password>
+  </PersonsData>
+  <PersonsData>
+    <Login>gkolevatov@gmail.com</Login>
+    <Password>cjkysirj</Password>
+  </PersonsData>
+</ArrayOfPersonsData>

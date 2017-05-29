@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfWorker xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Worker>
+    <Name>Сюткина Анастасия Анатольевна </Name>
+    <Profession>Заведующий складом</Profession>
+    <Clothes_size>S</Clothes_size>
+    <Shue_size>38</Shue_size>
+    <Login>nastya.syutkina@gmail.com</Login>
+  </Worker>
+  <Worker>
+    <Name>Сюткина Екатерина Анатольевна </Name>
+    <Profession>Директор</Profession>
+    <Clothes_size>S</Clothes_size>
+    <Shue_size>37</Shue_size>
+    <Login>katya.syutkina@gmail.com</Login>
+  </Worker>
+  <Worker>
+    <Name>Сюткин Илья Анатльевич </Name>
+    <Profession>Каменщик</Profession>
+    <Clothes_size>M</Clothes_size>
+    <Shue_size>45</Shue_size>
+    <Login>ilya.syutkin@gmail.com</Login>
+    <Cas_time>03.06.2017</Cas_time>
+    <Time>31.05.2017</Time>
+  </Worker>
+  <Worker>
+    <Name>Колеватов Григорий Андреевич </Name>
+    <Profession>Электрик</Profession>
+    <Clothes_size>L</Clothes_size>
+    <Shue_size>43</Shue_size>
+    <Login>gkolevatov@gmail.com</Login>
+    <Gloves_time>03.06.2017</Gloves_time>
+    <S_j_time>05.06.2017</S_j_time>
+    <S_pan_time>05.06.2017</S_pan_time>
+    <Time>29.05.2017</Time>
+  </Worker>
+</ArrayOfWorker>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfHistory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <History>
+    <Name>Сюткин Илья Анатльевич </Name>
+    <FirstData>01.06.2017</FirstData>
+    <MyOrder>Каска</MyOrder>
+    <SecondData>03.06.2017</SecondData>
+  </History>
+  <History>
+    <Name>Колеватов Григорий Андреевич </Name>
+    <FirstData>03.06.2017</FirstData>
+    <MyOrder>Рабочая куртка(летняя)</MyOrder>
+    <SecondData>03.06.2017</SecondData>
+  </History>
+  <History>
+    <Name>Колеватов Григорий Андреевич </Name>
+    <FirstData>31.05.2017</FirstData>
+    <MyOrder>Перчатки</MyOrder>
+    <SecondData>03.06.2017</SecondData>
+  </History>
+  <History>
+    <Name>Сюткин Илья Анатльевич </Name>
+    <FirstData>02.06.2017</FirstData>
+    <MyOrder>Рабочие штаны(зимние)</MyOrder>
+    <SecondData>03.06.2017</SecondData>
+  </History>
+  <History>
+    <Name>Колеватов Григорий Андреевич </Name>
+    <FirstData>04.06.2017</FirstData>
+    <MyOrder>Рабочая куртка(летняя)</MyOrder>
+    <SecondData>05.06.2017</SecondData>
+  </History>
+  <History>
+    <Name>Колеватов Григорий Андреевич </Name>
+    <FirstData>04.06.2017</FirstData>
+    <MyOrder>Рабочие штаны(летние)</MyOrder>
+    <SecondData>05.06.2017</SecondData>
+  </History>
+</ArrayOfHistory>
