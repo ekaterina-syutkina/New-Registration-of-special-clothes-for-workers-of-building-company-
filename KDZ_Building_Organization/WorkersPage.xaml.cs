@@ -17,7 +17,7 @@ using System.IO;
 using System.Collections;
 
 namespace KDZ_Building_Organization
-{   
+{
     /// <summary>
     /// Логика взаимодействия для WorkersPage.xaml
     /// </summary>
@@ -37,7 +37,7 @@ namespace KDZ_Building_Organization
         string w_j_time = null;
         string s_pan_time = null;
         string w_pan_time = null;
-        public WorkersPage(int i,string Id, string Prof, string cl_size, string sh_size, string time, string cas_time, string gloves_time, string s_sh_time,string w_sh_time, string s_j_time,string w_j_time, string s_pan_time,string w_pan_time)
+        public WorkersPage(int i, string Id, string Prof, string cl_size, string sh_size, string time, string cas_time, string gloves_time, string s_sh_time, string w_sh_time, string s_j_time, string w_j_time, string s_pan_time, string w_pan_time)
         {
             InitializeComponent();
             this.i = i;
@@ -62,13 +62,13 @@ namespace KDZ_Building_Organization
             if (w_j_time == null) { Winter_Jaket_time.Text = time; } else { Winter_Jaket_time.Text = w_j_time; }
             if (s_pan_time == null) { Summer_Pans_time.Text = time; } else { Summer_Pans_time.Text = s_pan_time; }
             if (w_pan_time == null) { Winter_Pans_time.Text = time; } else { Winter_Pans_time.Text = w_pan_time; }
-            Workers_Id.Text=Id;
-            Profession.Text=Prof;
-            Clothes_Size.Text=cl_size;
-            Shue_Size.Text=sh_size;
+            Workers_Id.Text = Id;
+            Profession.Text = Prof;
+            Clothes_Size.Text = cl_size;
+            Shue_Size.Text = sh_size;
             if (i == 1) { Get_clothes.IsEnabled = false; }
         }
-        
+
         private void Workers_Id_TextChanged(object sender, TextChangedEventArgs e)
         {
 
@@ -80,7 +80,7 @@ namespace KDZ_Building_Organization
         private void ComboBoxItem_Selected_1(object sender, RoutedEventArgs e)
         {
             order = Helmet.Content.ToString();
-            
+
         }
         private void ComboBoxItem_Selected_2(object sender, RoutedEventArgs e)
         {
@@ -119,26 +119,47 @@ namespace KDZ_Building_Organization
         }
         private void Get_clothes_Click(object sender, RoutedEventArgs e)
         {
-            Order ord = new Order(Workers_Id.Text, Choose_date.Text,order);
+            Order ord = new Order(Workers_Id.Text, Choose_date.Text, order);
             My_orders.Items.Add(ord.Result());
             list.Add(ord);
-            TextWriter writer = new StreamWriter("../../Order.txt");
-            ser.Serialize(writer, list);
-            writer.Close();
+            if (!File.Exists("../../Order.txt"))
+            {
+
+                using (StreamWriter sw = File.CreateText("../../Order.txt"))
+                {
+                    ser.Serialize(sw, list);
+                    sw.Close();
+
+                }
+            }
+            else
+            {
+                TextWriter writer = new StreamWriter("../../Order.txt");
+                ser.Serialize(writer, list);
+                writer.Close();
+            }
         }
-        
+
 
         private void Grid_0_Loaded(object sender, RoutedEventArgs e)
-        {   
-            try { TextReader reader = new StreamReader("../../Order.txt");
-                list = (List<Order>)ser.Deserialize(reader);
-                reader.Close(); } catch { }
-            foreach (Order o in list )
-            {   if (o.Name == Workers_Id.Text)
+        {
+            try
+            {
+                if (File.Exists("../../Order.txt"))
+                {
+                    TextReader reader = new StreamReader("../../Order.txt");
+                    list = (List<Order>)ser.Deserialize(reader);
+                    reader.Close();
+                }
+            }
+            catch { }
+            foreach (Order o in list)
+            {
+                if (o.Name == Workers_Id.Text)
                 { My_orders.Items.Add(o.Result()); }
             }
         }
 
-        
+
     }
 }

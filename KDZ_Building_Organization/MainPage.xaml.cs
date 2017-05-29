@@ -108,7 +108,7 @@ namespace KDZ_Building_Organization
 
                         }
                         if (k == list.Count)
-                        { Worker w1 = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text); list.Add(w1);listBox.Items.Add(w1.Name); }
+                        { Worker w1 = new Worker(Name.Text, prof, cl_size, sh_size, Login.Text); list.Add(w1); listBox.Items.Add(w1.Name); }
                         else { MessageBox.Show("Вакансия директора коипании занята", "Ошибка", MessageBoxButton.OK); }
                     }
                     else
@@ -140,18 +140,46 @@ namespace KDZ_Building_Organization
                                 listBox.Items.Add(w.Name);
                             }
                         }
-                        PersonsData p = new PersonsData(Login.Text, Password1.Password);
-                        
-                        //foreach (Worker c in list)
-                        //{ listBox.Items.Add(c.Result()); }
-                        datalist.Add(p);
+
+                    }
+                    PersonsData p = new PersonsData(Login.Text, Password1.Password);
+
+                    //foreach (Worker c in list)
+                    //{ listBox.Items.Add(c.Result()); }
+                    datalist.Add(p);
+
+                    if (!File.Exists("../../Worker.txt"))
+                    {
+                        StreamWriter sw = File.CreateText("../../Worker.txt");
+
+                        ser.Serialize(sw, list);
+                        sw.Close();
+                        MessageBox.Show("Файл создан ");
+
+                    }
+                    else
+                    {
+
+
                         TextWriter writer = new StreamWriter("../../Worker.txt");
                         ser.Serialize(writer, list);
                         writer.Close();
-                        writer = new StreamWriter("../../PersonsData.txt");
+                    }
+                    if (!File.Exists("../../PersonsData.txt"))
+                    {
+
+                        using (TextWriter fs = File.CreateText("../../PersonsData.txt"))
+                        {
+                            ser1.Serialize(fs, datalist);
+                            fs.Close();
+
+                        }
+                    }
+                    else
+                    {
+                        TextWriter writer = new StreamWriter("../../PersonsData.txt");
                         ser1.Serialize(writer, datalist);
                         writer.Close();
-
                     }
                 }
 
@@ -180,20 +208,27 @@ namespace KDZ_Building_Organization
                            new XmlSerializer(typeof(List<Worker>));
         XmlSerializer ser1 =
                            new XmlSerializer(typeof(List<PersonsData>));
-       
+
         private void FirstPage_Loaded(object sender, RoutedEventArgs e)
         {
-            TextReader reader = new StreamReader("../../Worker.txt");
-            list = (List<Worker>)ser.Deserialize(reader);
-            reader.Close();
-            reader = new StreamReader("../../PersonsData.txt");
-            datalist = (List<PersonsData>)ser1.Deserialize(reader);
-            reader.Close();
-            foreach (Worker c in list)
+            if (File.Exists("../../Worker.txt"))
             {
+                TextReader reader = new StreamReader("../../Worker.txt");
+                list = (List<Worker>)ser.Deserialize(reader);
+                reader.Close();
+                foreach (Worker c in list)
+                {
 
-                listBox.Items.Add(c.Name);
+                    listBox.Items.Add(c.Name);
+                }
             }
+            if (File.Exists("../../PersonsData.txt"))
+            {
+                TextReader reader = new StreamReader("../../PersonsData.txt");
+                datalist = (List<PersonsData>)ser1.Deserialize(reader);
+                reader.Close();
+            }
+
 
         }
 

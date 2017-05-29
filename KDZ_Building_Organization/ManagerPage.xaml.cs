@@ -62,9 +62,13 @@ namespace KDZ_Building_Organization
             }
             try
             {
-                reader = new StreamReader("../../History.txt");
-                historylist = (List<History>)ser2.Deserialize(reader);
-                reader.Close();
+                if (File.Exists("../../History.txt"))
+                {
+                    reader = new StreamReader("../../History.txt");
+                    historylist = (List<History>)ser2.Deserialize(reader);
+                    reader.Close();
+                }
+                
             }
             catch { }
         }
@@ -109,9 +113,23 @@ namespace KDZ_Building_Organization
                 writer = new StreamWriter("../../Worker.txt");
                 ser.Serialize(writer, list2);
                 writer.Close();
-                writer = new StreamWriter("../../History.txt");
-                ser2.Serialize(writer, historylist);
-                writer.Close();
+                list2.Clear();
+                if (!File.Exists("../../History.txt"))
+                {
+
+                    using (StreamWriter sw = File.CreateText("../../History.txt"))
+                    {
+                        ser2.Serialize(sw, historylist);
+                        sw.Close();
+
+                    }
+                }
+                else
+                {
+                    writer = new StreamWriter("../../History.txt");
+                    ser2.Serialize(writer, historylist);
+                    writer.Close();
+                }
             }
 
         }
