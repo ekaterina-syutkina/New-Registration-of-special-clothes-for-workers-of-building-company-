@@ -118,26 +118,28 @@ namespace KDZ_Building_Organization
 
         }
         private void Get_clothes_Click(object sender, RoutedEventArgs e)
-        {
-            Order ord = new Order(Workers_Id.Text, Choose_date.Text, order);
-            My_orders.Items.Add(ord.Result());
-            list.Add(ord);
-            if (!File.Exists("../../Order.txt"))
-            {
-
-                using (StreamWriter sw = File.CreateText("../../Order.txt"))
+        {   if (Choose_date.Text!="" && order!=null)
+            { Order ord = new Order(Workers_Id.Text, Choose_date.Text, order);
+                My_orders.Items.Add(ord.Result());
+                list.Add(ord);
+                if (!File.Exists("../../Order.txt"))
                 {
-                    ser.Serialize(sw, list);
-                    sw.Close();
 
+                    using (StreamWriter sw = File.CreateText("../../Order.txt"))
+                    {
+                        ser.Serialize(sw, list);
+                        sw.Close();
+
+                    }
                 }
-            }
-            else
-            {
-                TextWriter writer = new StreamWriter("../../Order.txt");
-                ser.Serialize(writer, list);
-                writer.Close();
-            }
+                else
+                {
+                    TextWriter writer = new StreamWriter("../../Order.txt");
+                    ser.Serialize(writer, list);
+                    writer.Close();
+                }
+                
+            }else{ MessageBox.Show("Пожалуйста выберите предмет одежды и укажите дату заказа", "Заказ оформлен не корректно"); }
         }
 
 
@@ -160,6 +162,9 @@ namespace KDZ_Building_Organization
             }
         }
 
+        private void Choose_clothes_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
 
+        }
     }
 }

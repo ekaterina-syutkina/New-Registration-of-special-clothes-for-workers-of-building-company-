@@ -8,8 +8,9 @@
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="HistoryPage">
 
-    <Grid Loaded="Grid_Loaded">
-        <Label x:Name="History_label" Content="История выполнения заказов " HorizontalAlignment="Left" Height="62" Margin="419,80,0,0" VerticalAlignment="Top" Width="381" FontSize="26.667"/>
+    <Grid Loaded="Grid_Loaded" Background="#FF8CB4D1">
+        <Image Source="photo/city.jpg" Margin="-10,10,10,10"/>
+            <Label x:Name="History_label" Content="История выполнения заказов " HorizontalAlignment="Left" Height="62" Margin="419,80,0,0" VerticalAlignment="Top" Width="381" FontSize="26.667"/>
         <ListBox x:Name="All_orders" HorizontalAlignment="Left" Height="146" Margin="352,213,0,0" VerticalAlignment="Top" Width="560"/>
 
     </Grid>

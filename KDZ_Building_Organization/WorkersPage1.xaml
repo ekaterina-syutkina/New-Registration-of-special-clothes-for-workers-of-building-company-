@@ -7,28 +7,29 @@
       mc:Ignorable="d" 
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="WorkersPage1">
-    <Grid x:Name="Grid_1" Loaded="Grid_1_Loaded_1">
-        <Label x:Name="Workers_Id_label" Content="Сотрудник" HorizontalAlignment="Left" Height="39" Margin="108,45,0,0" VerticalAlignment="Top" Width="206"/>
-        <Label x:Name="Profession_label" Content="Должность" HorizontalAlignment="Left" Margin="108,104,0,0" VerticalAlignment="Top" Height="40" Width="206"/>
-        <Label x:Name="Clothes_Size_label" Content="Размер одежды" HorizontalAlignment="Left" Margin="108,171,0,0" VerticalAlignment="Top" Height="40" Width="206"/>
-        <Label x:Name="Shue_Size_label" Content="Размер обуви" HorizontalAlignment="Left" Margin="108,242,0,0" VerticalAlignment="Top" Height="40" Width="206"/>
+    <Grid x:Name="Grid_1" Loaded="Grid_1_Loaded_1" Background="#FF5F93DE">
+        <Image Source="photo/worker_image.jpg" Margin="-80,0,182,0"/>
+        <Label x:Name="Workers_Id_label" Content="Сотрудник" HorizontalAlignment="Left" Height="39" Margin="108,45,0,0" VerticalAlignment="Top" Width="136" Foreground="#FFF1EAEA"/>
+        <Label x:Name="Profession_label" Content="Должность" HorizontalAlignment="Left" Margin="108,102,0,0" VerticalAlignment="Top" Height="40" Width="136" Foreground="#FFEEE0E0"/>
+        <Label x:Name="Clothes_Size_label" Content="Размер одежды" HorizontalAlignment="Left" Margin="108,171,0,0" VerticalAlignment="Top" Height="40" Width="112" Foreground="#FFF9F3F3"/>
+        <Label x:Name="Shue_Size_label" Content="Размер обуви" HorizontalAlignment="Left" Margin="108,242,0,0" VerticalAlignment="Top" Height="40" Width="112" Foreground="#FFF5EFEF"/>
         <TextBox x:Name="Workers_Id" HorizontalAlignment="Left" Height="39" Margin="268,45,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
         <TextBox x:Name="Profession" HorizontalAlignment="Left" Height="39" Margin="268,106,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
         <TextBox x:Name="Clothes_Size" HorizontalAlignment="Left" Height="39" Margin="268,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
         <TextBox x:Name="Shue_Size" HorizontalAlignment="Left" Height="39" Margin="268,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="212"/>
-        <Label x:Name="Helmet_label" HorizontalAlignment="Left" Height="27" Margin="705,66,0,0" VerticalAlignment="Top" Width="195" Content="Каска"/>
-        <Label x:Name="Clothes_label_Copy" Content="Спецодежда " HorizontalAlignment="Left" Height="27" Margin="705,27,0,0" VerticalAlignment="Top" Width="195"/>
-        <Label x:Name="Gloves_label" HorizontalAlignment="Left" Height="27" Margin="705,93,0,0" VerticalAlignment="Top" Width="195" Content="Перчатки"/>
-        <Label x:Name="Summer_Shues_label" HorizontalAlignment="Left" Height="27" Margin="705,127,0,0" VerticalAlignment="Top" Width="195" Content="Рабочаа обувь (летняя)"/>
-        <Label x:Name="Summer_Jaket_label" HorizontalAlignment="Left" Height="27" Margin="705,173,0,0" VerticalAlignment="Top" Width="195" Content="Рабочаа куртка (летняя)"/>
-        <Label x:Name="Summer_Pans_label" HorizontalAlignment="Left" Height="27" Margin="705,205,0,0" VerticalAlignment="Top" Width="195" Content="Рабочие штаны  (летние)"/>
-        <TextBox x:Name="Gloves_time" HorizontalAlignment="Left" Height="23" Margin="930,90,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
-        <TextBox x:Name="Summer_shues_time" HorizontalAlignment="Left" Height="23" Margin="930,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
-        <TextBox x:Name="Summer_Jaket_time" HorizontalAlignment="Left" Height="23" Margin="930,173,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
-        <TextBox x:Name="Summer_Pans_time" HorizontalAlignment="Left" Height="23" Margin="930,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
-        <TextBox x:Name="Helmet_time" HorizontalAlignment="Left" Height="23" Margin="930,61,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
-        <Label x:Name="time_label" Content="Дата выдачи" HorizontalAlignment="Left" Height="31" Margin="917,23,0,0" VerticalAlignment="Top" Width="225"/>
-        <Button x:Name="Get_clothes" Content="заказать одежду " HorizontalAlignment="Left" Height="52" Margin="480,449,0,0" VerticalAlignment="Top" Width="280" Click="Get_clothes_Click"/>
+        <Label x:Name="Helmet_label" HorizontalAlignment="Left" Height="27" Margin="705,66,0,0" VerticalAlignment="Top" Width="195" Content="Каска" Foreground="#FFFBF3F3"/>
+        <Label x:Name="Clothes_label_Copy" Content="Спецодежда " HorizontalAlignment="Left" Height="27" Margin="705,27,0,0" VerticalAlignment="Top" Width="195" Foreground="#FFF9F1F1" FontWeight="Bold"/>
+        <Label x:Name="Gloves_label" HorizontalAlignment="Left" Height="27" Margin="705,93,0,0" VerticalAlignment="Top" Width="195" Content="Перчатки" Foreground="#FFEEE4E4"/>
+        <Label x:Name="Summer_Shues_label" HorizontalAlignment="Left" Height="27" Margin="705,127,0,0" VerticalAlignment="Top" Width="195" Content="Рабочаа обувь (летняя)" Foreground="#FFF5EBEB"/>
+        <Label x:Name="Summer_Jaket_label" HorizontalAlignment="Left" Height="27" Margin="705,173,0,0" VerticalAlignment="Top" Width="195" Content="Рабочаа куртка (летняя)" Foreground="#FFF3EAEA"/>
+        <Label x:Name="Summer_Pans_label" HorizontalAlignment="Left" Height="27" Margin="705,205,0,0" VerticalAlignment="Top" Width="195" Content="Рабочие штаны  (летние)" Foreground="#FFF1E0E0"/>
+        <TextBox x:Name="Gloves_time" HorizontalAlignment="Left" Height="23" Margin="956,93,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
+        <TextBox x:Name="Summer_shues_time" HorizontalAlignment="Left" Height="23" Margin="956,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
+        <TextBox x:Name="Summer_Jaket_time" HorizontalAlignment="Left" Height="23" Margin="956,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
+        <TextBox x:Name="Summer_Pans_time" HorizontalAlignment="Left" Height="23" Margin="956,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
+        <TextBox x:Name="Helmet_time" HorizontalAlignment="Left" Height="23" Margin="956,59,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="192"/>
+        <Label x:Name="time_label" Content="Дата выдачи" HorizontalAlignment="Left" Height="31" Margin="987,23,0,0" VerticalAlignment="Top" Width="101" FontWeight="Bold" Foreground="#FFF9EFEF"/>
+        <Button x:Name="Get_clothes" Content="заказать одежду " HorizontalAlignment="Left" Height="52" Margin="72,481,0,0" VerticalAlignment="Top" Width="280" Click="Get_clothes_Click"/>
         <ComboBox x:Name="Choose_clothes" HorizontalAlignment="Left" Height="40" Margin="67,389,0,0" VerticalAlignment="Top" Width="309">
             <ComboBoxItem Name="Helmet" Content="Каска"  Selected="ComboBoxItem_Selected_1"/>
             <ComboBoxItem Name="S_Shues" Content="Рабочая обувь(летняя)" Selected="ComboBoxItem_Selected_2"/>
@@ -36,7 +37,7 @@
             <ComboBoxItem Name="S_J" Content="Рабочая куртка(летняя)" Selected="ComboBoxItem_Selected_4"/>
             <ComboBoxItem Name="S_P" Content="Рабочие штаны(летние)" Selected="ComboBoxItem_Selected_5"/>
         </ComboBox>
-        <Label x:Name="Order_clothes" Content="Заказать одежду " HorizontalAlignment="Left" Margin="108,328,0,316" Width="244" FontSize="21.333"/>
+        <Label x:Name="Order_clothes" Content="Заказать одежду " HorizontalAlignment="Left" Margin="108,328,0,316" Width="244" FontSize="21.333" Foreground="#FFF5EBEB"/>
         <ListBox x:Name="My_orders" HorizontalAlignment="Left" Height="88" Margin="859,341,0,0" VerticalAlignment="Top" Width="331"/>
         <Label x:Name="my_orders_label" Content="мои заказы" HorizontalAlignment="Left" Height="34" Margin="877,274,0,0" VerticalAlignment="Top" Width="245" FontSize="16"/>
         <DatePicker x:Name="Choose_date" HorizontalAlignment="Left" Height="40" Margin="480,389,0,0" VerticalAlignment="Top" Width="241" RenderTransformOrigin="0.459,-0.9"/>

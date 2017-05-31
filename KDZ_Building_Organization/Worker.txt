@@ -21,6 +21,7 @@
     <Shue_size>45</Shue_size>
     <Login>ilya.syutkin@gmail.com</Login>
     <Cas_time>03.06.2017</Cas_time>
+    <S_j_time>05.06.2017</S_j_time>
     <Time>31.05.2017</Time>
   </Worker>
   <Worker>

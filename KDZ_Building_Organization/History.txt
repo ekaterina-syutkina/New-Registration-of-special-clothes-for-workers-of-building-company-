@@ -36,4 +36,16 @@
     <MyOrder>Рабочие штаны(летние)</MyOrder>
     <SecondData>05.06.2017</SecondData>
   </History>
+  <History>
+    <Name>Колеватов Григорий Андреевич </Name>
+    <FirstData>04.06.2017</FirstData>
+    <MyOrder>Рабочая куртка(летняя)</MyOrder>
+    <SecondData>05.06.2017</SecondData>
+  </History>
+  <History>
+    <Name>Сюткин Илья Анатльевич </Name>
+    <FirstData>02.06.2017</FirstData>
+    <MyOrder>Рабочая куртка(летняя)</MyOrder>
+    <SecondData>05.06.2017</SecondData>
+  </History>
 </ArrayOfHistory>

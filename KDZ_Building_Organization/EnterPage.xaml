@@ -4,18 +4,27 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KDZ_Building_Organization"
-      mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="1200"
-      Title="EnterPage">
+      mc:Ignorable="d" d:DesignWidth="1200"
+      Title="EnterPage" Height="692">
 
     <Grid>
-        <Grid Margin="-311,10,-172,20">
-            <Label x:Name="Laable_Log_in" Content="Вход" HorizontalAlignment="Left" Height="42" Margin="537,33,0,0" VerticalAlignment="Top" Width="490" FontSize="26.667" FontFamily="Times New Roman"/>
-            <Label x:Name="Input_Login" Content="Введите логин" HorizontalAlignment="Left" Height="48" Margin="384,116,0,0" VerticalAlignment="Top" Width="229"/>
-            <Label x:Name="Input_Password" Content="Введите пароль" HorizontalAlignment="Left" Height="48" Margin="384,181,0,0" VerticalAlignment="Top" Width="229" Cursor=""/>
-            <Button x:Name="Enter_an_account" Content="Войти" HorizontalAlignment="Left" Height="62" Margin="466,268,0,0" VerticalAlignment="Top" Width="318" Click="Enter_an_account_Click"/>
-            <TextBox x:Name="Log" HorizontalAlignment="Left" Height="36" Margin="596,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="293"/>
-            <PasswordBox x:Name="Pass" HorizontalAlignment="Left" Height="33" Margin="596,181,0,0" VerticalAlignment="Top" Width="293"/>
+        <Grid Background="#FF161F76" Margin="0,0,0,36">
+            <Image Source="photo/download_img.png" Margin="0,0,0,20"></Image>
+            <Label x:Name="Laable_Log_in" Content="Вход" HorizontalAlignment="Left" Height="42" Margin="596,27,0,0" VerticalAlignment="Top" Width="98" FontSize="26.667" FontFamily="Times New Roman" Foreground="#FFC8E8F3"/>
+            <Label x:Name="Input_Login" Content="Введите логин" HorizontalAlignment="Left" Height="48" Margin="596,104,0,0" VerticalAlignment="Top" Width="105" Foreground="#FFAFEAF3"/>
+            <Label x:Name="Input_Password" Content="Введите пароль" HorizontalAlignment="Left" Height="48" Margin="594,163,0,0" VerticalAlignment="Top" Width="143" Cursor="" Foreground="#FF93DAF0"/>
+            <Button x:Name="Enter_an_account" Content="Войти" HorizontalAlignment="Left" Height="62" Margin="653,262,0,0" VerticalAlignment="Top" Width="318" Click="Enter_an_account_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFE9F9F9" Offset="0"/>
+                        <GradientStop Color="#FFAAF5F5" Offset="0.201"/>
+                        <GradientStop Color="#FF4BE4E4" Offset="0.556"/>
+                        <GradientStop Color="#FF35BAEC" Offset="0.987"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <TextBox x:Name="Log" HorizontalAlignment="Left" Height="36" Margin="737,104,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234"/>
+            <PasswordBox x:Name="Pass" HorizontalAlignment="Left" Height="33" Margin="737,163,0,0" VerticalAlignment="Top" Width="234"/>
 
         </Grid>
 

@@ -75,7 +75,7 @@ namespace KDZ_Building_Organization
         List<Worker> list2 = new List<Worker>();
         private void Done_Click(object sender, RoutedEventArgs e)
         {
-            if (DataPicker.Text == null) { MessageBox.Show("Укажите дату выполнения заказа", "Ошибка", MessageBoxButton.OK); }
+            if (DataPicker.Text =="") { MessageBox.Show("Укажите дату выполнения заказа", "Ошибка", MessageBoxButton.OK); }
             else
             {
                 string newdata = DataPicker.Text;

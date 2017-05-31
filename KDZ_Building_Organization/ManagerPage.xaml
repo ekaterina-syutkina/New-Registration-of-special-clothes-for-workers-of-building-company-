@@ -4,22 +4,22 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KDZ_Building_Organization"
-      mc:Ignorable="d" 
-      d:DesignHeight="700" d:DesignWidth="1200"
-      Title="ManagerPage">
+      mc:Ignorable="d"
+      Title="ManagerPage" Height="700" Width="1200" >
 
-    <Grid x:Name="Manager_Grid" Loaded="Manager_Grid_Loaded_1">
-        <Label x:Name="Manager_label" Content="Заведующий складом " HorizontalAlignment="Left" Height="57" Margin="126,74,0,0" VerticalAlignment="Top" Width="385" FontSize="29.333"/>
-        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="57" Margin="600,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="417"/>
-        <Label x:Name="All_workers_lable" Content="Работники фирмы " HorizontalAlignment="Left" Height="46" Margin="63,153,0,0" VerticalAlignment="Top" Width="349" FontSize="21.333"/>
-        <Label x:Name="Requests_lable" Content="Запросы работников " HorizontalAlignment="Left" Height="46" Margin="498,153,0,0" VerticalAlignment="Top" Width="340" FontSize="21.333"/>
-        <ListBox x:Name="All_workers" HorizontalAlignment="Left" Height="213" Margin="37,265,0,0" VerticalAlignment="Top" Width="276"/>
-        <ListBox x:Name="Requests" HorizontalAlignment="Left" Height="186" Margin="480,265,0,0" VerticalAlignment="Top" Width="377"/>
-        <DatePicker x:Name="DataPicker" HorizontalAlignment="Left" Height="35" Margin="876,265,0,0" VerticalAlignment="Top" Width="290"/>
-        <Button x:Name="Done" Content="Выдано" HorizontalAlignment="Left" Height="37" Margin="900,314,0,0" VerticalAlignment="Top" Width="242" Click="Done_Click"/>
-        <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="49" Margin="480,199,0,0" VerticalAlignment="Top" Width="642"/>
-        <Button x:Name="button" Content="Посмотреть профиль работника " HorizontalAlignment="Left" Height="39" Margin="37,514,0,0" VerticalAlignment="Top" Width="276" Click="button_Click"/>
-        <Button x:Name="History_button" Content="Посмотреть историю выдачи заказов " HorizontalAlignment="Left" Height="39" Margin="474,514,0,0" VerticalAlignment="Top" Width="342" Click="History_button_Click"/>
+    <Grid x:Name="Manager_Grid" Loaded="Manager_Grid_Loaded_1" Background="#FF1A4978">
+        <Image Source="photo/zao-inzhener-stroitelnaya-kompaniya.jpg" Margin="0,-20,0,10"/>
+        <Label x:Name="Manager_label" Content="Заведующий складом " HorizontalAlignment="Left" Height="57" Margin="37,37,0,0" VerticalAlignment="Top" Width="385" FontSize="29.333" Background="#FFD4E0F5" Grid.Column="1"/>
+        <TextBox x:Name="Name" HorizontalAlignment="Left" Height="57" Margin="561,37,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="417" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label x:Name="All_workers_lable" Content="Работники фирмы " HorizontalAlignment="Left" Background="#FFD4E0F5" Height="46" Margin="37,153,0,0" VerticalAlignment="Top" Width="229" FontSize="21.333" Grid.Column="1"/>
+        <Label x:Name="Requests_lable" Content="Запросы работников " HorizontalAlignment="Left" Height="46" Margin="431,153,0,0" VerticalAlignment="Top" Background="#FFD4E0F5" Width="242" FontSize="21.333" Grid.Column="1"/>
+        <ListBox x:Name="All_workers" HorizontalAlignment="Left" Height="213" Margin="11,253,0,0" Background="#FFEEF0F1" VerticalAlignment="Top" Width="276" Grid.Column="1" Grid.RowSpan="2"/>
+        <ListBox x:Name="Requests" HorizontalAlignment="Left" Height="213" Margin="408,253,0,0" VerticalAlignment="Top" Width="309" Background="#FFEEF0F1" Grid.Column="1" Grid.RowSpan="2"/>
+        <DatePicker x:Name="DataPicker" HorizontalAlignment="Left" Height="35" Margin="746,265,0,0" VerticalAlignment="Top" Width="290" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Button x:Name="Done" Content="Выдано" HorizontalAlignment="Left" Height="37" Margin="736,340,0,0" VerticalAlignment="Top" Width="242" Click="Done_Click" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <Label x:Name="label" Content="" HorizontalAlignment="Left" Height="49" Margin="454,199,0,0" VerticalAlignment="Top" Width="642" Grid.Column="1" Grid.ColumnSpan="4"/>
+        <Button x:Name="button" Content="Посмотреть профиль работника " HorizontalAlignment="Left" Height="39" Margin="11,532,0,0" VerticalAlignment="Top" Width="276" Click="button_Click"/>
+        <Button x:Name="History_button" Content="Посмотреть историю выдачи заказов " HorizontalAlignment="Left" Height="39" Margin="408,532,0,0" VerticalAlignment="Top" Width="309" Click="History_button_Click"/>
 
     </Grid>
 </Page>

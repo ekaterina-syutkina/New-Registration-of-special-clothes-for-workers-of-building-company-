@@ -8,12 +8,17 @@
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="DirectorsPage">
 
-    <Grid x:Name="Directors_Page" Loaded="Directors_Page_Loaded">
-        <Label x:Name="Directors_page_label" Content="Директор компании" HorizontalAlignment="Left" Height="61" Margin="68,22,0,0" VerticalAlignment="Top" Width="505" FontSize="29.333"/>
-        <TextBox x:Name="Directors_name" HorizontalAlignment="Left" Height="49" Margin="37,109,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" FontSize="21.333" TextChanged="Directors_name_TextChanged"/>
-        <ListBox x:Name="All_workers" HorizontalAlignment="Left" Height="257" Margin="675,109,0,0" VerticalAlignment="Top" Width="413"/>
-        <Label x:Name="label" Content="Работники фирмы " HorizontalAlignment="Left" Height="61" Margin="772,31,0,0" VerticalAlignment="Top" Width="225" FontSize="21.333"/>
-        <Label x:Name="Instruction_lable" Content="Чтобы удалить работника кликните на него правой кнопкой мыши  и нажмите ''Удалить" HorizontalAlignment="Left" Height="34" Margin="38,288,0,0" VerticalAlignment="Top" Width="510" RenderTransformOrigin="0.5,0.5">
+    <Grid x:Name="Directors_Page" Loaded="Directors_Page_Loaded" Background="#FF0B5F5F">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="26*"/>
+            <RowDefinition Height="149*"/>
+        </Grid.RowDefinitions>
+        <Image Source="photo/big-ben-and-the-london-sky.jpg" Margin="0,-10,0,10" Grid.RowSpan="2"/>
+        <Label x:Name="Directors_page_label" Content="Директор компании" HorizontalAlignment="Left" Height="61" Margin="220,43,0,0" VerticalAlignment="Top" Width="293" FontSize="29.333" Foreground="#FF515EE0" Background="#FFD3FBF7"/>
+        <TextBox x:Name="Directors_name" HorizontalAlignment="Left" Height="49" Margin="130,39,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="475" FontSize="21.333" TextChanged="Directors_name_TextChanged" Grid.Row="1"/>
+        <ListBox x:Name="All_workers" HorizontalAlignment="Left" Height="257" Margin="675,5,0,0" VerticalAlignment="Top" Width="413" Grid.Row="1"/>
+        <Label x:Name="label" Content="Работники фирмы " HorizontalAlignment="Left" Height="49" Margin="758,43,0,0" VerticalAlignment="Top" Width="199" FontSize="21.333" Foreground="#FF2757D4" Background="#FFD3FBF7"/>
+        <Label x:Name="Instruction_lable" Content="Чтобы удалить работника кликните на него правой кнопкой мыши  и нажмите ''Удалить" HorizontalAlignment="Left" Height="34" Margin="110,184,0,0" VerticalAlignment="Top" Width="510" RenderTransformOrigin="0.5,0.5" Foreground="#FF1522A2" Background="#FFDEFFFE" Grid.Row="1">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -23,9 +28,27 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <Button x:Name="Delete" Content="Удалить работника" HorizontalAlignment="Left" Height="74" Margin="68,366,0,0" VerticalAlignment="Top" Width="383" FontSize="18.667" Click="Delete_Click"/>
-        <Button x:Name="button" Content="Открыть профиль работника" HorizontalAlignment="Left" Height="58" Margin="758,449,0,0" VerticalAlignment="Top" Width="260" Click="button_Click"/>
-        <Label x:Name="Instruction2" Content="Чтобы открыть профиль работника выберите его из списка и нажмите кнопку &quot;Открыть профиль работника&quot;" HorizontalAlignment="Left" Height="35" Margin="550,392,0,0" VerticalAlignment="Top" Width="618"/>
+        <Button x:Name="Delete" Content="Удалить работника" HorizontalAlignment="Left" Height="74" Margin="130,262,0,0" VerticalAlignment="Top" Width="383" FontSize="18.667" Click="Delete_Click" Grid.Row="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFE5F6F7" Offset="0.025"/>
+                    <GradientStop Color="#FFB9EDF9" Offset="0.201"/>
+                    <GradientStop Color="#FF90D8E8" Offset="0.531"/>
+                    <GradientStop Color="#FF5DBAF0" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="button" Content="Открыть профиль работника" HorizontalAlignment="Left" Height="58" Margin="758,345,0,0" VerticalAlignment="Top" Width="260" Click="button_Click" Grid.Row="1">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFEFF6F7" Offset="0"/>
+                    <GradientStop Color="#FFC2EAF3" Offset="0.381"/>
+                    <GradientStop Color="#FF73CBDE" Offset="0.711"/>
+                    <GradientStop Color="#FF22A3BF" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="Instruction2" Content="Чтобы открыть профиль работника выберите его из списка и нажмите кнопку &quot;Открыть профиль работника&quot;" HorizontalAlignment="Left" Height="35" Margin="550,288,0,0" VerticalAlignment="Top" Width="618" Background="#FFD3FBF7" Foreground="#FF2757D4" Grid.Row="1"/>
 
     </Grid>
 </Page>

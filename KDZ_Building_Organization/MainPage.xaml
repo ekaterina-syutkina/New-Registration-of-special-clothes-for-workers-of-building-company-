@@ -8,8 +8,8 @@
       d:DesignHeight="700" d:DesignWidth="1200"
       Title="MainPage" MinWidth="1200" ScrollViewer.CanContentScroll="True" ScrollViewer.HorizontalScrollBarVisibility="Auto">
 
-    <Grid MinWidth="1200">
-        <Grid x:Name="FirstPage" Margin="38,18,0,6" Loaded="FirstPage_Loaded" RenderTransformOrigin="0.53,0.572" HorizontalAlignment="Left">
+    <Grid MinWidth="1200" Background="#FFC4F3F3">
+        <Grid x:Name="FirstPage" Margin="64,39,0,-15" Loaded="FirstPage_Loaded" RenderTransformOrigin="0.53,0.572" HorizontalAlignment="Left" Background="#FFCDEEF1">
             <Grid.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -22,7 +22,15 @@
                 <ColumnDefinition Width="461*"/>
                 <ColumnDefinition Width="153*"/>
             </Grid.ColumnDefinitions>
+            <Image Source="photo/g158746.jpg" Grid.ColumnSpan="2" Margin="-10,-10,10,10"/>
             <Menu x:Name="Shue_size" HorizontalAlignment="Left" Height="270" Margin="182,206,0,0" VerticalAlignment="Top" Width="78" FontSize="8">
+                <Menu.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFD6EEEE" Offset="0.085"/>
+                        <GradientStop Color="#FFA5F0F0" Offset="0.295"/>
+                        <GradientStop Color="#FF44BDD1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Menu.Background>
                 <RadioButton x:Name="size_37" Content="37" FontSize="18" Width="78" Height="22"/>
                 <RadioButton x:Name="size_38" Content="38" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="68"/>
                 <RadioButton x:Name="size_39" Content="39" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="68"/>
@@ -34,13 +42,29 @@
                 <RadioButton x:Name="size_45" Content="45" FontSize="18" Width="62" Height="42" d:IsHidden="True"/>
             </Menu>
             <Menu x:Name="Clothes_size" HorizontalAlignment="Left" Height="146" Margin="20,203,0,0" VerticalAlignment="Top" Width="101">
+                <Menu.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFE0F7FB" Offset="0.064"/>
+                        <GradientStop Color="#FF60D3C7" Offset="0.756"/>
+                        <GradientStop Color="#FFB9F1EF" Offset="0.406"/>
+                        <GradientStop Color="#FF69C7D6" Offset="1"/>
+                    </LinearGradientBrush>
+                </Menu.Background>
                 <RadioButton x:Name="size_S" Content="S" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="78" Checked="size_M_Checked"/>
                 <RadioButton x:Name="size_M" Content="M" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="78"/>
                 <RadioButton x:Name="size_L" Content="L" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="87"/>
                 <RadioButton x:Name="size_XL" Content="XL" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="64"/>
                 <RadioButton x:Name="size_XXL" Content="XXL" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="22" Width="131"/>
             </Menu>
-            <Menu x:Name="List_of_professions" HorizontalAlignment="Left" Height="421" Margin="283,202,0,0" VerticalAlignment="Top" Width="215">
+            <Menu x:Name="List_of_professions" HorizontalAlignment="Left" Height="274" Margin="283,202,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF0A0909">
+                <Menu.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFDFF0F1" Offset="0.068"/>
+                        <GradientStop Color="#FF9FEDF5" Offset="0.397"/>
+                        <GradientStop Color="#FF53CEE0" Offset="0.632"/>
+                        <GradientStop Color="#FF38B0C3" Offset="1"/>
+                    </LinearGradientBrush>
+                </Menu.Background>
                 <RadioButton x:Name="Director" Content="Директор" Width="143" Height="24" FontSize="18"/>
                 <RadioButton x:Name="worker" Content="Прораб" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="26" Width="131"/>
                 <RadioButton x:Name="stonemason" Content="Каменщик" RenderTransformOrigin="-0.836,2.3" Height="26" Width="156" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="18"/>
@@ -49,24 +73,43 @@
                 <RadioButton x:Name="electric" Content="Электрик" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="29" Width="131"/>
                 <RadioButton x:Name="Manager" Content="Заведующий складом" FontSize="18" RenderTransformOrigin="-0.836,2.3" Height="29" Width="205"/>
             </Menu>
-            <Label x:Name="Put_clothes_size" Content="Размер одежды" HorizontalAlignment="Left" Height="38" Margin="3,168,0,0" VerticalAlignment="Top" Width="152" FontSize="16"/>
-            <Label x:Name="Put_shue_size" Content="Размер обуви " HorizontalAlignment="Left" Height="38" Margin="158,168,0,0" VerticalAlignment="Top" Width="144" FontSize="16"/>
-            <Label x:Name="Put_profession" Content="Профессия" HorizontalAlignment="Left" Height="38" Margin="302,168,0,0" VerticalAlignment="Top" Width="128" FontSize="16"/>
+            <Label x:Name="Put_clothes_size" Content="Размер одежды" HorizontalAlignment="Left" Height="38" Margin="3,168,0,0" VerticalAlignment="Top" Width="152" FontSize="16" FontWeight="Bold" Foreground="#FF1B3DD4"/>
+            <Label x:Name="Put_shue_size" Content="Размер обуви " HorizontalAlignment="Left" Height="38" Margin="160,168,0,0" VerticalAlignment="Top" Width="144" FontSize="16" FontWeight="Bold" Foreground="#FF1F26BF"/>
+            <Label x:Name="Put_profession" Content="Профессия" HorizontalAlignment="Left" Height="38" Margin="302,168,0,0" VerticalAlignment="Top" Width="128" FontSize="16" FontWeight="Bold" Foreground="#FF1219B6"/>
             <TextBox x:Name="Name" HorizontalAlignment="Left" Height="34" Margin="195,71,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" TextChanged="Name_TextChanged_1"/>
-            <Label x:Name="Put_name" Content="Введите ФИО" HorizontalAlignment="Left" Height="42" Margin="3,71,0,0" VerticalAlignment="Top" Width="118" FontSize="16"/>
-            <Button x:Name="Add_worker_" Content="Добавить работника" HorizontalAlignment="Left" Height="76" Margin="523,318,-273,0" VerticalAlignment="Top" Width="364" FontSize="18" Click="Add_worker__Click" Grid.ColumnSpan="2"/>
-            <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="130" Margin="503,481,-273,0" VerticalAlignment="Top" Width="384" Grid.ColumnSpan="2"/>
-            <Label x:Name="label" Content="Регистрация " HorizontalAlignment="Left" Height="39" Margin="104,4,0,0" VerticalAlignment="Top" Width="510" FontSize="18.667"/>
-            <Label x:Name="Put_name_Copy" Content="Дата выхода на работу " HorizontalAlignment="Left" Height="42" Margin="3,121,0,0" VerticalAlignment="Top" Width="178" FontSize="16"/>
-            <DatePicker x:Name="StartDay" HorizontalAlignment="Left" Height="39" Margin="211,124,0,0" VerticalAlignment="Top" Width="226"/>
-            <Label x:Name="Put_name_Copy1" Content="Логин " HorizontalAlignment="Left" Height="42" Margin="503,127,-7,0" VerticalAlignment="Top" Width="118" FontSize="16" Grid.ColumnSpan="2"/>
-            <Label x:Name="Put_name_Copy2" Content="Пароль " HorizontalAlignment="Left" Height="42" Margin="503,180,-7,0" VerticalAlignment="Top" Width="118" FontSize="16" Grid.ColumnSpan="2"/>
-            <Label x:Name="Put_name_Copy3" Content="Подтвердить пароль " HorizontalAlignment="Left" Height="42" Margin="503,240,-51,0" VerticalAlignment="Top" Width="162" FontSize="16" Grid.ColumnSpan="2"/>
+            <Label x:Name="Put_name" Content="Введите ФИО" HorizontalAlignment="Left" Height="42" Margin="10,69,0,0" VerticalAlignment="Top" Width="118" FontSize="16" FontWeight="Bold" Foreground="#FF1D2DD3"/>
+            <Button x:Name="Add_worker_" Content="Добавить работника" HorizontalAlignment="Left" Height="76" Margin="523,318,-273,0" VerticalAlignment="Top" Width="364" FontSize="18" Click="Add_worker__Click" Grid.ColumnSpan="2">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FF48D1E8" Offset="0.543"/>
+                        <GradientStop Color="#FFABE6F0" Offset="0.145"/>
+                        <GradientStop Color="#FFB1E2EA" Offset="0.355"/>
+                        <GradientStop Color="#FF41B9CB" Offset="1"/>
+                        <GradientStop Color="#FFDDF2F5" Offset="0.034"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="130" Margin="523,481,0,0" VerticalAlignment="Top" Width="384" Grid.ColumnSpan="2"/>
+            <Label x:Name="label" Content="Регистрация " HorizontalAlignment="Left" Height="39" Margin="104,4,0,0" VerticalAlignment="Top" Width="136" FontSize="18.667" FontWeight="Bold" Foreground="#FF1425CF"/>
+            <Label x:Name="Put_name_Copy" Content="Дата выхода на работу " HorizontalAlignment="Left" Height="42" Margin="3,121,0,0" VerticalAlignment="Top" Width="203" FontSize="16" FontWeight="Bold" Foreground="#FF2018BD"/>
+            <DatePicker x:Name="StartDay" HorizontalAlignment="Left" Height="39" Margin="221,126,0,0" VerticalAlignment="Top" Width="226"/>
+            <Label x:Name="Put_name_Copy1" Content="Логин " HorizontalAlignment="Left" Height="42" Margin="696,181,0,0" VerticalAlignment="Top" Width="118" FontSize="16" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="#FF1212CF"/>
+            <Label x:Name="Put_name_Copy2" Content="Пароль " HorizontalAlignment="Left" Height="42" Margin="696,134,0,0" VerticalAlignment="Top" Width="118" FontSize="16" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="#FF232ACD"/>
+            <Label x:Name="Put_name_Copy3" Content="Подтвердить пароль " HorizontalAlignment="Left" Height="42" Margin="674,240,0,0" VerticalAlignment="Top" Width="184" FontSize="16" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="#FF0E2195"/>
             <PasswordBox x:Name="Password1" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="71,177,-273,0" VerticalAlignment="Top" Width="202"/>
-            <PasswordBox x:Name="RepeatPassword" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="71,240,-273,0" VerticalAlignment="Top" Width="202"/>
+            <PasswordBox x:Name="RepeatPassword" Grid.Column="1" HorizontalAlignment="Left" Height="39" Margin="71,243,0,0" VerticalAlignment="Top" Width="202"/>
             <TextBox x:Name="Login" HorizontalAlignment="Left" Height="34" Margin="42,133,-293,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251" Grid.Column="1"/>
-            <Button x:Name="Enter" Content="Войти " Grid.Column="1" HorizontalAlignment="Left" Margin="42,60,-187,0" VerticalAlignment="Top" Width="145" Height="53" Click="Enter_Click"/>
-            <Label x:Name="All_workers_lable" Content="Работники фирмы" HorizontalAlignment="Left" Height="52" Margin="534,424,-220,0" VerticalAlignment="Top" Width="300" FontSize="24" Grid.ColumnSpan="2"/>
+            <Button x:Name="Enter" Content="Войти " Grid.Column="1" HorizontalAlignment="Left" Margin="42,60,-187,0" VerticalAlignment="Top" Width="145" Height="53" Click="Enter_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3" Offset="0"/>
+                        <GradientStop Color="#FFEBEBEB" Offset="0.239"/>
+                        <GradientStop Color="#FF97EDF5" Offset="0.556"/>
+                        <GradientStop Color="#FF4BB7C1" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Label x:Name="All_workers_lable" Content="Работники фирмы" HorizontalAlignment="Left" Height="52" Margin="587,424,0,0" VerticalAlignment="Top" Width="271" FontSize="24" Grid.ColumnSpan="2" FontWeight="Bold" Foreground="#FF2738DE"/>
         </Grid>
 
     </Grid>
